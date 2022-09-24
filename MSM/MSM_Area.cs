@@ -114,7 +114,7 @@ namespace MSM
             dataGridViewMultiskill.Columns[1].Frozen = true;
 
             Data.TEMPAREA = comboBoxArea.Text;
-
+            //COMENTARIO AÑADIDO PARA HACER PRUEBA EN EL GITHUB
         }
 
         private void dataGridViewMultiskill_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
