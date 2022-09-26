@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.buttonMultiSkills = new System.Windows.Forms.Button();
             this.buttonAdministrador = new System.Windows.Forms.Button();
             this.buttonKardex = new System.Windows.Forms.Button();
-            this.buttonFechasDeCertificacionesYEntrenaminetos = new System.Windows.Forms.Button();
             this.buttonReportePorVencer = new System.Windows.Forms.Button();
             this.TittleBar = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.TittleBar.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,7 +62,7 @@
             this.buttonMultiSkills.Name = "buttonMultiSkills";
             this.buttonMultiSkills.Size = new System.Drawing.Size(290, 25);
             this.buttonMultiSkills.TabIndex = 0;
-            this.buttonMultiSkills.Text = "MultiSkills";
+            this.buttonMultiSkills.Text = "Multi skills";
             this.buttonMultiSkills.UseVisualStyleBackColor = false;
             this.buttonMultiSkills.Click += new System.EventHandler(this.buttonMultiSkills_Click);
             // 
@@ -74,7 +75,7 @@
             this.buttonAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdministrador.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdministrador.ForeColor = System.Drawing.Color.Snow;
-            this.buttonAdministrador.Location = new System.Drawing.Point(0, 240);
+            this.buttonAdministrador.Location = new System.Drawing.Point(0, 200);
             this.buttonAdministrador.Name = "buttonAdministrador";
             this.buttonAdministrador.Size = new System.Drawing.Size(290, 25);
             this.buttonAdministrador.TabIndex = 1;
@@ -96,25 +97,9 @@
             this.buttonKardex.Name = "buttonKardex";
             this.buttonKardex.Size = new System.Drawing.Size(290, 25);
             this.buttonKardex.TabIndex = 2;
-            this.buttonKardex.Text = "Kardex";
+            this.buttonKardex.Text = "Kardex de entrenamientos / Kardex of training";
             this.buttonKardex.UseVisualStyleBackColor = false;
             this.buttonKardex.Click += new System.EventHandler(this.buttonKardex_Click);
-            // 
-            // buttonFechasDeCertificacionesYEntrenaminetos
-            // 
-            this.buttonFechasDeCertificacionesYEntrenaminetos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
-            this.buttonFechasDeCertificacionesYEntrenaminetos.FlatAppearance.BorderSize = 0;
-            this.buttonFechasDeCertificacionesYEntrenaminetos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonFechasDeCertificacionesYEntrenaminetos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonFechasDeCertificacionesYEntrenaminetos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFechasDeCertificacionesYEntrenaminetos.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFechasDeCertificacionesYEntrenaminetos.ForeColor = System.Drawing.Color.Snow;
-            this.buttonFechasDeCertificacionesYEntrenaminetos.Location = new System.Drawing.Point(0, 200);
-            this.buttonFechasDeCertificacionesYEntrenaminetos.Name = "buttonFechasDeCertificacionesYEntrenaminetos";
-            this.buttonFechasDeCertificacionesYEntrenaminetos.Size = new System.Drawing.Size(290, 25);
-            this.buttonFechasDeCertificacionesYEntrenaminetos.TabIndex = 3;
-            this.buttonFechasDeCertificacionesYEntrenaminetos.Text = "Calendario / Schedule";
-            this.buttonFechasDeCertificacionesYEntrenaminetos.UseVisualStyleBackColor = false;
             // 
             // buttonReportePorVencer
             // 
@@ -164,6 +149,7 @@
             this.button1.Size = new System.Drawing.Size(34, 30);
             this.button1.TabIndex = 2;
             this.button1.Text = "<";
+            this.toolTip1.SetToolTip(this.button1, "\"Regresar / Return \"");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -183,6 +169,7 @@
             this.buttonMinimizar.Size = new System.Drawing.Size(34, 30);
             this.buttonMinimizar.TabIndex = 1;
             this.buttonMinimizar.Text = "-";
+            this.toolTip1.SetToolTip(this.buttonMinimizar, "\"Minimizar / Minimize\"");
             this.buttonMinimizar.UseVisualStyleBackColor = false;
             this.buttonMinimizar.Click += new System.EventHandler(this.buttonMinimizar_Click);
             // 
@@ -202,6 +189,7 @@
             this.buttonCerrar.Size = new System.Drawing.Size(34, 30);
             this.buttonCerrar.TabIndex = 0;
             this.buttonCerrar.Text = "X";
+            this.toolTip1.SetToolTip(this.buttonCerrar, "\"Cerrar / Close\"");
             this.buttonCerrar.UseVisualStyleBackColor = false;
             this.buttonCerrar.Click += new System.EventHandler(this.buttonCerrar_Click);
             // 
@@ -230,7 +218,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panel3.Controls.Add(this.buttonFechasDeCertificacionesYEntrenaminetos);
             this.panel3.Controls.Add(this.buttonAdministrador);
             this.panel3.Controls.Add(this.buttonReportePorVencer);
             this.panel3.Controls.Add(this.label8);
@@ -292,7 +279,6 @@
         private System.Windows.Forms.Button buttonMultiSkills;
         private System.Windows.Forms.Button buttonAdministrador;
         private System.Windows.Forms.Button buttonKardex;
-        private System.Windows.Forms.Button buttonFechasDeCertificacionesYEntrenaminetos;
         private System.Windows.Forms.Button buttonReportePorVencer;
         private System.Windows.Forms.Panel TittleBar;
         private System.Windows.Forms.Button buttonMinimizar;
@@ -303,5 +289,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

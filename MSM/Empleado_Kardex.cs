@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace MSM
 {
     public partial class Empleado_Kardex : Form
+
     {            DBHelper DBHelper = new DBHelper();
                  private bool mouseIsDown = false;
                  private Point firstPoint;
@@ -51,11 +52,11 @@ namespace MSM
 
 
         #endregion
-        private void buttonOkIngresarElNumeroEmpleado_Click(object sender, EventArgs e)
+        private void buttonOkIngresarElNumeroEmpleado_Click(object sender, EventArgs e) //Metodo que le da accion al boton buscar
         {
 
-            
 
+         
             DBHelper.ObtenerNombreEmpleadoViaNumero(textBoxNumeroEmpleado.Text);
 
             dataGridViewCertificacionesEmpleado.DataSource = null;
@@ -69,7 +70,8 @@ namespace MSM
             norStyle.Font = new System.Drawing.Font("Lean Status Symbols", 8.25F, System.Drawing.FontStyle.Regular);
             dataGridViewCertificacionesEmpleado.Columns[4].DefaultCellStyle = norStyle;  //Metodo para que aparezcan las meatballs
 
-
+            labelcargando.Visible = false;
+            metroProgressBarCarga.Visible = false;
             comboBoxBusinessUnit.Visible = true;
             labelBannerBusines.Visible = true;
             dataGridViewCertificacionesEmpleado.Visible = true;
@@ -77,7 +79,8 @@ namespace MSM
             labelKarde.Visible = true;
             labelKardexIngles.Visible = true;
             buttonTipoDetalle.Visible = true;
-
+            buttonNivel.Visible = true; 
+         
            
 
             comboBoxBusinessUnit.Items.Clear();
@@ -107,11 +110,15 @@ namespace MSM
              
 
             }
+            //dataGridViewCertificacionesEmpleado.Columns[0].DefaultCellStyle.BackColor = Color.Cyan;
+
+
+           
 
         }
 
 
-        private void textBoxNumeroEmpleado_TextChanged(object sender, EventArgs e)
+        private void textBoxNumeroEmpleado_TextChanged(object sender, EventArgs e) //Metodo que aparece el nombre de empleado
         {
             DBHelper DBHelper = new DBHelper();
             //Variable para contar los caracteres ingresaras en el textbox
@@ -160,7 +167,7 @@ namespace MSM
 
       
 
-        private void buttonBorrarFiltro_Click(object sender, EventArgs e)
+        private void buttonBorrarFiltro_Click(object sender, EventArgs e) //Metodo desaparece el filtro 
         {
             comboBoxAreaEmpleado.SelectedIndex = -1;
 
@@ -187,7 +194,7 @@ namespace MSM
 
         }
 
-        private void comboBoxBusinessUnit_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxBusinessUnit_SelectedIndexChanged(object sender, EventArgs e) //Metodo de combobox bussinessunit, hace el filtro de areas
         {
             comboBoxAreaEmpleado.SelectedIndex = -1;
             comboBoxAreaEmpleado.Items.Clear();
@@ -197,11 +204,6 @@ namespace MSM
 
             labelBannerFiltrarEntrenamientos.Visible = true;
             comboBoxAreaEmpleado.Visible = true; 
-        }
-
-        private void labelBannerBuscar_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void buttonRegresar_Click(object sender, EventArgs e)
@@ -260,7 +262,7 @@ namespace MSM
         }
 
 
-        public void exportarexcel2(DataGridView datatabla) //Metodo para exportar los datos de data griedview a excell
+        public void exportarexcel2(DataGridView datatabla) //Metodo para exportar los datos de segundo data griedview a excell
         {
             Microsoft.Office.Interop.Excel.Application exportarexcel = new Microsoft.Office.Interop.Excel.Application();
 
@@ -296,43 +298,54 @@ namespace MSM
         }
 
 
-        private void buttonExportar_Click(object sender, EventArgs e)
+        private void buttonExportar_Click(object sender, EventArgs e) // Metodo para anadirle accion al logo de excell 
         {
-            metroProgressBarCarga.Visible = true;
+          
+            labelcargando.Visible = true;
+            labelcargando.Text = "Cargando / Loading ";
+            metroProgressBarCarga.Visible = true;    //Mostramos barra de loading y asi el porcentaje que ira aumentando
             metroProgressBarCarga.Value = 10;
+            string mensaje = "La información descargada es solo para fines de consulta y puede variar, para información oficial consultar la publicada en MSM/Training app                                                                        " +
+                "                                                                                                         " +
+                "The downloaded information is only for consultation purposes and may vary, for official information consult the published in MSM/Training app ";
+
+
+            MessageBox.Show(mensaje, "Advertencia / Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //^Mensaje que avisa que la informacion exportada a excell no es oficial 
             metroProgressBarCarga.Value = 20;
             metroProgressBarCarga.Value = 30;
             metroProgressBarCarga.Value = 40;
-            exportarexcel(dataGridViewCertificacionesEmpleado);
             metroProgressBarCarga.Value = 50;
-
-
+            metroProgressBarCarga.Value = 60;
+            metroProgressBarCarga.Value = 70;
+            metroProgressBarCarga.Value = 80;
+            metroProgressBarCarga.Value = 95;
+            exportarexcel(dataGridViewCertificacionesEmpleado);
             exportarexcel2(dataGridViewEntrenamientosNoObtenidos);
 
+            labelcargando.Text = "Carga finalizada / Upload finished";
             metroProgressBarCarga.Value = 100;
+
 
                                                                             
 
 
         }
 
-        private void dataGridViewCertificacionesEmpleado_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
+     
 
-
-        }
-
-        private void labelNombreEmpleado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+       
+        private void button1_Click(object sender, EventArgs e) //Metodo para mostrar pantalla tipo detalle
         {
             KARDEX_TIPODETALLE PantallaTipo = new KARDEX_TIPODETALLE();
             PantallaTipo.Show();
             
+        }
+        private void buttonNivel_Click_1(object sender, EventArgs e)
+        {
+
+            meatballs_Detalle PantallaMeatballs = new meatballs_Detalle();
+            PantallaMeatballs.Show();
         }
     } 
     }

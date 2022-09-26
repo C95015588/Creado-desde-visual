@@ -79,7 +79,6 @@
             this.button1.TabIndex = 24;
             this.button1.Text = "Editar administradores / Edit administrators";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
             // 
             // buttonFechasDeCertificacionesYEntrenaminetos
             // 
@@ -113,7 +112,6 @@
             this.buttonAdministrador.TabIndex = 1;
             this.buttonAdministrador.Text = "Editar supervisores / Edit Supervisors";
             this.buttonAdministrador.UseVisualStyleBackColor = false;
-            this.buttonAdministrador.Visible = false;
             // 
             // buttonReportePorVencer
             // 
@@ -130,7 +128,6 @@
             this.buttonReportePorVencer.TabIndex = 8;
             this.buttonReportePorVencer.Text = "Editar certificaciones o entrenamientos/Edit certifications or trainings";
             this.buttonReportePorVencer.UseVisualStyleBackColor = false;
-            this.buttonReportePorVencer.Click += new System.EventHandler(this.buttonReportePorVencer_Click);
             // 
             // label8
             // 

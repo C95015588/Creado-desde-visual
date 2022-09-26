@@ -52,13 +52,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.toolTipMinimizar = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTipCerrarPantalla = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBoxManual = new System.Windows.Forms.PictureBox();
             this.panelCredenciales.SuspendLayout();
             this.panel1.SuspendLayout();
             this.TittleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManual)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxUsuario
@@ -67,7 +68,6 @@
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(287, 20);
             this.textBoxUsuario.TabIndex = 1;
-            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
             // textBoxContraseña
             // 
@@ -194,7 +194,7 @@
             this.buttonMinimizar.Size = new System.Drawing.Size(34, 30);
             this.buttonMinimizar.TabIndex = 1;
             this.buttonMinimizar.Text = "-";
-            this.toolTipMinimizar.SetToolTip(this.buttonMinimizar, "\"Click para minimizar pantalla\"");
+            this.toolTip.SetToolTip(this.buttonMinimizar, "\"Minimizar / Minimize\"");
             this.buttonMinimizar.UseVisualStyleBackColor = false;
             this.buttonMinimizar.Click += new System.EventHandler(this.buttonMinimizar_Click);
             // 
@@ -213,7 +213,7 @@
             this.buttonCerrar.Size = new System.Drawing.Size(34, 30);
             this.buttonCerrar.TabIndex = 0;
             this.buttonCerrar.Text = "X";
-            this.toolTipCerrarPantalla.SetToolTip(this.buttonCerrar, "\"Click para cerrar pantalla\"");
+            this.toolTip.SetToolTip(this.buttonCerrar, "\"Cerrar / Close\"");
             this.buttonCerrar.UseVisualStyleBackColor = false;
             this.buttonCerrar.Click += new System.EventHandler(this.buttonCerrar_Click);
             // 
@@ -227,7 +227,6 @@
             this.label8.Size = new System.Drawing.Size(42, 16);
             this.label8.TabIndex = 22;
             this.label8.Text = "Login";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -282,7 +281,6 @@
             this.label5.Size = new System.Drawing.Size(102, 27);
             this.label5.TabIndex = 25;
             this.label5.Text = "COLLINS";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label10
             // 
@@ -325,13 +323,17 @@
             this.pictureBox2.TabIndex = 29;
             this.pictureBox2.TabStop = false;
             // 
-            // toolTipMinimizar
+            // pictureBoxManual
             // 
-            this.toolTipMinimizar.ToolTipTitle = "Minimizar pantalla";
-            // 
-            // toolTipCerrarPantalla
-            // 
-            this.toolTipCerrarPantalla.ToolTipTitle = "Cerrar pantalla";
+            this.pictureBoxManual.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxManual.Image")));
+            this.pictureBoxManual.Location = new System.Drawing.Point(298, 467);
+            this.pictureBoxManual.Name = "pictureBoxManual";
+            this.pictureBoxManual.Size = new System.Drawing.Size(20, 18);
+            this.pictureBoxManual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxManual.TabIndex = 2;
+            this.pictureBoxManual.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureBoxManual, "\"Manual de usuario / User manual\"");
+            this.pictureBoxManual.Click += new System.EventHandler(this.pictureBoxManual_Click);
             // 
             // Login
             // 
@@ -339,6 +341,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(330, 502);
+            this.Controls.Add(this.pictureBoxManual);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
@@ -365,6 +368,7 @@
             this.TittleBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManual)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,9 +396,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolTip toolTipMinimizar;
-        private System.Windows.Forms.ToolTip toolTipCerrarPantalla;
+        private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxManual;
     }
 }
 

@@ -41,14 +41,7 @@ namespace MSM
         #endregion
 
 
-        private void buttonRegresar_Click(object sender, EventArgs e)
-        {
-            Menu Pantalla2 = new Menu();
-
-            Pantalla2.Show();
-            this.Close();
-            this.Hide();
-        }
+       
 
         private void buttonMinimizar_Click(object sender, EventArgs e)
         {
@@ -59,7 +52,7 @@ namespace MSM
         private void buttonCerrar_Click(object sender, EventArgs e)
         {
 
-            Application.Exit();
+            this.Close();
         }
 
         private void labelDescripcion_Click(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KARDEX_TIPODETALLE));
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelCodigo = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.labelCodigoTexto = new System.Windows.Forms.Label();
             this.labelNombreTexto = new System.Windows.Forms.Label();
             this.TittleBar = new System.Windows.Forms.Panel();
-            this.buttonRegresar = new System.Windows.Forms.Button();
             this.buttonMinimizar = new System.Windows.Forms.Button();
             this.buttonCerrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -69,6 +69,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.TittleBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -168,7 +169,6 @@
             // TittleBar
             // 
             this.TittleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.TittleBar.Controls.Add(this.buttonRegresar);
             this.TittleBar.Controls.Add(this.buttonMinimizar);
             this.TittleBar.Controls.Add(this.buttonCerrar);
             this.TittleBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -180,25 +180,6 @@
             this.TittleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.TittleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.TittleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
-            // 
-            // buttonRegresar
-            // 
-            this.buttonRegresar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRegresar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonRegresar.FlatAppearance.BorderSize = 0;
-            this.buttonRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.buttonRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonRegresar.Location = new System.Drawing.Point(340, 0);
-            this.buttonRegresar.Name = "buttonRegresar";
-            this.buttonRegresar.Size = new System.Drawing.Size(34, 30);
-            this.buttonRegresar.TabIndex = 2;
-            this.buttonRegresar.Text = "<";
-            this.buttonRegresar.UseVisualStyleBackColor = false;
-            this.buttonRegresar.Click += new System.EventHandler(this.buttonRegresar_Click);
             // 
             // buttonMinimizar
             // 
@@ -216,6 +197,7 @@
             this.buttonMinimizar.Size = new System.Drawing.Size(34, 30);
             this.buttonMinimizar.TabIndex = 1;
             this.buttonMinimizar.Text = "-";
+            this.toolTip1.SetToolTip(this.buttonMinimizar, "\"Minimizar / Minimize\"");
             this.buttonMinimizar.UseVisualStyleBackColor = false;
             this.buttonMinimizar.Click += new System.EventHandler(this.buttonMinimizar_Click);
             // 
@@ -235,6 +217,7 @@
             this.buttonCerrar.Size = new System.Drawing.Size(34, 30);
             this.buttonCerrar.TabIndex = 0;
             this.buttonCerrar.Text = "X";
+            this.toolTip1.SetToolTip(this.buttonCerrar, "\"Cerrar / Close\"");
             this.buttonCerrar.UseVisualStyleBackColor = false;
             this.buttonCerrar.Click += new System.EventHandler(this.buttonCerrar_Click);
             // 
@@ -583,10 +566,9 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "KARDEX_TIPODETALLE";
-            this.Opacity = 0.8D;
+            this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MSM_Detalles";
-        
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
@@ -611,7 +593,6 @@
         private System.Windows.Forms.Label labelCodigoTexto;
         private System.Windows.Forms.Label labelNombreTexto;
         private System.Windows.Forms.Panel TittleBar;
-        private System.Windows.Forms.Button buttonRegresar;
         private System.Windows.Forms.Button buttonMinimizar;
         private System.Windows.Forms.Button buttonCerrar;
         private System.Windows.Forms.Panel panel1;
@@ -642,5 +623,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
