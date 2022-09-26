@@ -1015,6 +1015,97 @@ namespace MSM
         }
 
 
+        public string ObtenerProcesoByCodigo(string comboBoxArea, string codigo)
+        {
+
+
+
+            string sqlDataSource = connectionString;
+
+            SqlDataReader dataReader;
+            string proceso = "";
+            using (SqlConnection cnn = new SqlConnection(sqlDataSource))
+            {
+                cnn.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_area_select_proceso_by_codigo", cnn))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Area", comboBoxArea);
+                    sqlCommand.Parameters.AddWithValue("@Codigo", codigo);
+                    dataReader = sqlCommand.ExecuteReader();
+
+
+
+                    while (dataReader.Read())
+                    {
+                        proceso = dataReader.GetValue(0).ToString();
+
+                    }
+                    dataReader.Close();
+                    cnn.Close();
+                }
+                return proceso;
+            }
+        }
+
+
+        public List<string> ObtenerProcesos(string comboBoxArea)
+        {
+            string sqlDataSource = connectionString;
+
+            SqlDataReader dataReader;
+            List<string> procesos = new List<string>();
+            using (SqlConnection cnn = new SqlConnection(sqlDataSource))
+            {
+                cnn.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_area_select_proceso", cnn))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Area", comboBoxArea);
+
+                    dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        procesos.Add ( dataReader.GetValue(0).ToString());
+                    }
+                    dataReader.Close();
+                    cnn.Close();
+                }
+                return procesos;
+            }
+        }
+        public string ComprobarPerteneceArea(string noEmpleado)
+        {
+
+
+
+            string sqlDataSource = connectionString;
+
+            SqlDataReader dataReader;
+            string proceso = "";
+            using (SqlConnection cnn = new SqlConnection(sqlDataSource))
+            {
+                cnn.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_area_select_proceso_by_codigo", cnn))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@NoEmpleado", noEmpleado);
+                    sqlCommand.Parameters.AddWithValue("@Area", Data.TEMPAREA);
+                    dataReader = sqlCommand.ExecuteReader();
+
+
+
+                    while (dataReader.Read())
+                    {
+                        proceso = dataReader.GetValue(0).ToString();
+                    }
+                    dataReader.Close();
+                    cnn.Close();
+                }
+                return proceso;
+            }
+        }
 
     }
 }
