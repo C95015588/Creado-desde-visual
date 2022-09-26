@@ -26,8 +26,12 @@ namespace MSM
         static public string CODIGO;
         static public Boolean ESCERTIFICACION = false;
         //Variable para certificacion si es true es certificacion, falso no es certificacion
-        static public Boolean ESENTRENAMIENTO = false; 
+        static public Boolean ESENTRENAMIENTO = false;
         //Variable para certificacion si es true es entrenamiento, falso no es entrenamiento 
+        //Variable para guardar temporalmente el codigo
+        static public string TEMPCODIGO;
+        //Variable para guardar temporalmente el area
+        static public string TEMPAREA;
 
     }
 }
