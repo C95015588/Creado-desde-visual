@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace MSM
 {
     public partial class MSM_Area : Form
@@ -52,93 +53,58 @@ namespace MSM
 
         public void diseñoMSM()
         {
-     
-            string certificacionEntrenamiento, fechaNivelCompetencia, fechaVencimiento, proceso;
-            string[] informacionCertificacion, certificacionEntrenamientoNombre;
-            string[] procesos;
-            int[] colorProcesosRojo = new int[100];
-            int[] colorProcesosAzul = new int[100];
-            int[] colorProcesosVerde = new int[100];
+         
 
-            procesos = DBHelper.ObtenerProcesos(comboBoxArea.Text).ToArray();
-            int rojo = 0 , verde = 65, azul = 50;
-
-            for (int o = 0; o <= procesos.Length; o++)
-            {
-                colorProcesosRojo[o] = rojo;
-                colorProcesosAzul[o] = azul;
-                colorProcesosVerde[o] = verde;
-                rojo = rojo + 5;
-                azul = azul + 15;
-                verde = verde + 10;
-            }
 
             for (int i = 2; dataGridViewMultiskill.ColumnCount > i; i++)
             {
-                char separador = '|';
-                certificacionEntrenamiento = dataGridViewMultiskill.Columns[i].HeaderText;
-                certificacionEntrenamientoNombre = certificacionEntrenamiento.Split(separador);
-                
                 for (int x = 0; dataGridViewMultiskill.RowCount > x; x++)
                 {
-
-                    //if (dataGridViewMultiskill.Rows[x].Cells[i].Value != null)
-                    //{
-                    //    if (dataGridViewMultiskill.Rows[x].Cells[i].Value.ToString() == String.Empty)
-                    //        dataGridViewMultiskill.Rows[x].Cells[i].Value = 0;
-                    //}
+                    if (dataGridViewMultiskill.Rows[x].Cells[i].Value != null)
+                    {
+                        if (dataGridViewMultiskill.Rows[x].Cells[i].Value.ToString() == String.Empty)
+                            dataGridViewMultiskill.Rows[x].Cells[i].Value = 0;
+                    }
+               
+                    
+             
                     try
                     {
                         char delimitador = '[';
-
+                        char separador = '-';
                         if (dataGridViewMultiskill.Rows[x].Cells[i].Value != null)
                         {
-                            fechaNivelCompetencia = dataGridViewMultiskill.Rows[x].Cells[i].Value.ToString();
-                            informacionCertificacion = fechaNivelCompetencia.Split(delimitador);
-                            fechaVencimiento = informacionCertificacion[1];
-                            if (informacionCertificacion[1] != "")
+                            string fechaNivelCompetencia = dataGridViewMultiskill.Rows[x].Cells[i].Value.ToString();
+                            string[] informacionCertificacion = fechaNivelCompetencia.Split(delimitador);
+                            string certificacionEntrenamiento = dataGridViewMultiskill.Columns[i].HeaderText;
+                            string[] certificacionEntrenamientoNombre = certificacionEntrenamiento.Split(separador);
+                            string fechaVencimiento = informacionCertificacion[1];
+                            string duracion = DBHelper.ObtenerDuracionCertificacionEntrenamiento(certificacionEntrenamientoNombre[1]);
+                            int duracionDias = int.Parse(duracion);
+                            fechaVencimiento = fechaVencimiento.Remove(fechaVencimiento.Length - 1);
+
+                            var fechaVigencia = DateTime.Parse(fechaVencimiento);
+                            fechaVigencia = fechaVigencia.AddDays(-duracionDias);
+                            if (fechaVigencia <= DateTime.Today)
                             {
-                                string duracion = DBHelper.ObtenerDuracionCertificacionEntrenamiento(certificacionEntrenamientoNombre[0]);
-                                int duracionDias = int.Parse(duracion);
-                                fechaVencimiento = fechaVencimiento.Remove(fechaVencimiento.Length - 1);
-
-                                var fechaVigencia = DateTime.Parse(fechaVencimiento);
-                                fechaVigencia = fechaVigencia.AddDays(-duracionDias);
-                                if (fechaVigencia <= DateTime.Today)
-                                {
-                                    dataGridViewMultiskill.Rows[x].Cells[i].Style.BackColor = Color.Red;
+                                dataGridViewMultiskill.Rows[x].Cells[i].Style.BackColor = Color.Red;
+                               
 
 
-                                }
                             }
+
+                           
                         }
                     }
                     catch
                     {
 
+                       
+                      
                     }
                 }
-
-                certificacionEntrenamientoNombre[1] = certificacionEntrenamientoNombre[1].Remove(0, 2);
-                proceso = DBHelper.ObtenerProcesoByCodigo(comboBoxArea.Text, certificacionEntrenamientoNombre[1]);
-
-                for (int x = 0; x <= procesos.Length - 1; x++)
-                {
-                    if (procesos[x] == proceso)
-                    {
-                        dataGridViewMultiskill.Columns[i].HeaderCell.Style.BackColor = Color.FromArgb(colorProcesosRojo[x], colorProcesosAzul[x], colorProcesosVerde[x]);
-                        break;
-                    }
-                }
-
-
-
-
-
                 //dataGridViewMultiskill.Columns[i].DefaultCellStyle = norStyle;  //Metodo para que aparezcan las meatballs
             }
-
-
         }
 
         private void MSM_Area_Load(object sender, EventArgs e)
@@ -148,29 +114,47 @@ namespace MSM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (comboBoxArea.Text != "")
-            {
+            labelcargando.Visible = true;
+            metroProgressBarCarga.Visible = true;
 
-                DBHelper.MostrarTablaMultiSkill(dataGridViewMultiskill, comboBoxArea.Text);
-                //System.Windows.Forms.DataGridViewCellStyle norStyle = new System.Windows.Forms.DataGridViewCellStyle();
-                //norStyle.Font = new System.Drawing.Font("Lean Status Symbols", 14.0F, System.Drawing.FontStyle.Regular);
+            buttonNivel.Visible = true;
+            labelcargando.Text = "Cargando / Loading ";
+            metroProgressBarCarga.Value = 10;
+            metroProgressBarCarga.Value = 20;
 
-                dataGridViewMultiskill.AutoResizeColumns();
-                dataGridViewMultiskill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            DBHelper.MostrarTablaMultiSkill(dataGridViewMultiskill, comboBoxArea.Text);
+            //System.Windows.Forms.DataGridViewCellStyle norStyle = new System.Windows.Forms.DataGridViewCellStyle();
+            //norStyle.Font = new System.Drawing.Font("Lean Status Symbols", 14.0F, System.Drawing.FontStyle.Regular);
 
-                diseñoMSM();
+            metroProgressBarCarga.Value = 40;
+            metroProgressBarCarga.Value = 60;
+            dataGridViewMultiskill.AutoResizeColumns();
 
-                dataGridViewMultiskill.Columns[1].Frozen = true;
+            dataGridViewMultiskill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            metroProgressBarCarga.Value = 80;
+            dataGridViewMultiskill.Visible = true;
+          
+            diseñoMSM();
+            metroProgressBarCarga.Value = 100;
+            labelcargando.Text = "Carga finalizada / Upload finished";
 
-                Data.TEMPAREA = comboBoxArea.Text;
-                //COMENTARIO AÑADIDO PARA HACER PRUEBA EN EL GITHUB
-            }
+
+
+
+
+         
+
+            metroProgressBarCarga.Visible = false;
+            dataGridViewMultiskill.Columns[1].Frozen = true;
+
+
+
         }
 
         private void dataGridViewMultiskill_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //REVISAR SI ES NECESARIO POR EL CLICK DERECHO
-            char delimitador = '/';
+            char delimitador = '-';
 
             var certificacionSeleccionada = dataGridViewMultiskill.CurrentRow;
             try
@@ -234,6 +218,76 @@ namespace MSM
         {
             Application.Exit();
         }
+
+       
+
+        public void exportarexcel(DataGridView datatabla) //Metodo para exportar los datos de data griedview a excell
+        {
+            Microsoft.Office.Interop.Excel.Application exportarexcel = new Microsoft.Office.Interop.Excel.Application();
+
+            exportarexcel.Application.Workbooks.Add(true);
+
+            int indicecolumna = 0;
+
+            foreach (DataGridViewColumn columna in datatabla.Columns)
+            {
+                indicecolumna++;
+
+                exportarexcel.Cells[1, indicecolumna] = columna.Name;
+
+            }
+            int indicefila = 0;
+
+            foreach (DataGridViewRow fila in datatabla.Rows)
+            {
+                indicefila++;
+                indicecolumna = 0;
+
+                foreach (DataGridViewColumn columna in datatabla.Columns)
+                {
+                    indicecolumna++;
+                    exportarexcel.Cells[indicefila + 1, indicecolumna] = fila.Cells[columna.Name].Value;
+                }
+
+
+
+
+            }
+            exportarexcel.Visible = true;
+        }
+
+        private void pictureBoxExcel_Click(object sender, EventArgs e)
+        {
+            labelcargando.Text = "Cargando / Loading ";
+            metroProgressBarCarga.Visible = true;
+            metroProgressBarCarga.Value = 10;
+            string mensaje = "La información descargada es solo para fines de consulta y puede variar, para información oficial consultar la publicada en MSM/Training app                                                                        " +
+                "                                                                                                         " +
+                "The downloaded information is only for consultation purposes and may vary, for official information consult the published in MSM/Training app ";
+              
+
+            MessageBox.Show( mensaje , "Advertencia / Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //^Mensaje que avisa que la informacion exportada a excell no es oficial 
+
+
+
+            metroProgressBarCarga.Value = 20;
+            metroProgressBarCarga.Value = 30;
+            metroProgressBarCarga.Value = 40;
+            exportarexcel(dataGridViewMultiskill);
+            metroProgressBarCarga.Value = 100;
+
+
+            labelcargando.Text = "Carga finalizada / Upload finished";
+
+        }
+        private void buttonNivel_Click_1(object sender, EventArgs e)
+        {
+
+            meatballs_Detalle PantallaMeatballs = new meatballs_Detalle();
+            PantallaMeatballs.Show();
+        }
     }
-}
+    }
+
     

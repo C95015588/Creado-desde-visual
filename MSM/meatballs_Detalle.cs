@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace MSM
 {
-    public partial class Administracion : Form
+    public partial class meatballs_Detalle : Form
     {
-
-        private bool mouseIsDown = false;
+        DBHelper DBHelper = new DBHelper();
         private Point firstPoint;
-        public Administracion()
+        public meatballs_Detalle()
         {
             InitializeComponent();
         }
@@ -25,7 +24,7 @@ namespace MSM
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             firstPoint = e.Location;
-            mouseIsDown = true;
+
         }
         private void pnlTitleBar_MouseMove(object sender, MouseEventArgs e)
         {
@@ -33,46 +32,27 @@ namespace MSM
         }
         private void pnlTitleBar_MouseUp(object sender, MouseEventArgs e)
         {
-            mouseIsDown = false;
+
         }
+
+
+
+
 
 
 
         #endregion
 
-
-        private void buttonEditarCertificacionesOEntrenamientos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonMultiSkills_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonRegresar_Click(object sender, EventArgs e)
-        {
-            Menu Pantalla2 = new Menu();
-
-            Pantalla2.Show();
-            this.Close();
-            this.Hide();
-        }
-
         private void buttonMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+
         }
 
         private void buttonCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
 
-        private void buttonFechasDeCertificacionesYEntrenaminetos_Click(object sender, EventArgs e)
-        {
-            
+            this.Close();
         }
     }
 }

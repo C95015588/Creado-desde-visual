@@ -75,35 +75,11 @@
     <Compile Include="Administracion.designer.cs">
       <DependentUpon>Administracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administracion_actualizar_nivel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Administracion_actualizar_nivel.Designer.cs">
-      <DependentUpon>Administracion_actualizar_nivel.cs</DependentUpon>
-    </Compile>
     <Compile Include="Administracion_Administrador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Administracion_Administrador.Designer.cs">
       <DependentUpon>Administracion_Administrador.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Administracion_Certificacion_Entrenamiento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Administracion_Certificacion_Entrenamiento.designer.cs">
-      <DependentUpon>Administracion_Certificacion_Entrenamiento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Administracion_Certificacion_Entrenamiento_Areas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Administracion_Certificacion_Entrenamiento_Areas.designer.cs">
-      <DependentUpon>Administracion_Certificacion_Entrenamiento_Areas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cambio_Area.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cambio_Area.Designer.cs">
-      <DependentUpon>Cambio_Area.cs</DependentUpon>
     </Compile>
     <Compile Include="Data.cs" />
     <Compile Include="DBHelper.cs" />
@@ -118,6 +94,12 @@
     </Compile>
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="meatballs_Detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="meatballs_Detalle.Designer.cs">
+      <DependentUpon>meatballs_Detalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -148,26 +130,17 @@
     <EmbeddedResource Include="Administracion.resx">
       <DependentUpon>Administracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administracion_actualizar_nivel.resx">
-      <DependentUpon>Administracion_actualizar_nivel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Administracion_Administrador.resx">
       <DependentUpon>Administracion_Administrador.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Administracion_Certificacion_Entrenamiento.resx">
-      <DependentUpon>Administracion_Certificacion_Entrenamiento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Administracion_Certificacion_Entrenamiento_Areas.resx">
-      <DependentUpon>Administracion_Certificacion_Entrenamiento_Areas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cambio_Area.resx">
-      <DependentUpon>Cambio_Area.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleado_Kardex.resx">
       <DependentUpon>Empleado_Kardex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="meatballs_Detalle.resx">
+      <DependentUpon>meatballs_Detalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
