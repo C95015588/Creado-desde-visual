@@ -67,28 +67,28 @@ namespace MSM
         }
 
         //PELICANO 
-        private void buttonAdministrador_Click(object sender, EventArgs e)
+        private void buttonAdministrador_Click(object sender, EventArgs e) //Boton nos dirige al menu administrador
         {
             Administracion PantallaAdministracion = new Administracion();
             PantallaAdministracion.Show();
             this.Hide();
         }
 
-        private void buttonMultiSkills_Click(object sender, EventArgs e)
+        private void buttonMultiSkills_Click(object sender, EventArgs e) //Boton nos dirige a pantalla MSM
         {
             MSM_Area PantallaMsm = new MSM_Area();
             PantallaMsm.Show();
             this.Hide();
         }
 
-        private void buttonKardex_Click(object sender, EventArgs e)
+        private void buttonKardex_Click(object sender, EventArgs e) //Boton nos dirige a pantalla kardex 
         {
             Empleado_Kardex PantallaKardex = new Empleado_Kardex();
             PantallaKardex.Show();
             this.Hide();
         }
 
-        private void buttonReportePorVencer_Click(object sender, EventArgs e)
+        private void buttonReportePorVencer_Click(object sender, EventArgs e) 
         {
             Reporte_Por_Vencer PantallaReporte = new Reporte_Por_Vencer();
             PantallaReporte.Show();

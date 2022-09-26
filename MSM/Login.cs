@@ -152,19 +152,9 @@ namespace MSM
 
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void pictureBoxManual_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxUsuario_TextChanged(object sender, EventArgs e)
-        {
-
+            //Metodo para mostrar el manual de usuario 
         }
     }
 }

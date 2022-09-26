@@ -121,7 +121,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAArwAAAK8CAYAAAANumxDAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAP+WSURBVHhe7J0FnB7V9f43QQt1
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAP+WSURBVHhe7J0FnB7V9f43QQt1
         +7W0xTXEXdbdLe6BJARICO5etHgLBUoNrVFqFHeSQNzd3RPcC+d/nsme9393cnf3tZDw7tN+vtyZc+85
         98687zvz7M2ZO2kiQgghhBBCSMriNRJCCCGEEJIqeI2EEEIIIYSkCl4jIYQQQgghqYLXSAghhBBCSKrg
         NRJCCCGEEJIqeI2EEEIIIYSkCl4jIYQQQgghqYLXSAghhBBCSKrgNRJCCCGEEJIqeI2EEEIIIYSkCl4j
@@ -1405,9 +1405,6 @@
         XCEYFEIIIYQQIjdw0f8H/iZDSeSgsgwAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="toolTipAviso.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="toolTipAviso.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

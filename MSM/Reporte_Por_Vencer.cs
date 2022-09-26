@@ -59,6 +59,11 @@ namespace MSM
 
         private void Buscar_Click(object sender, EventArgs e)
         {
+            labelcargando.Visible = true;
+            labelcargando.Text = "Cargando / Loading ";
+            metroProgressBarCarga.Visible = true;
+            metroProgressBarCarga.Value = 20;
+
             dataGridViewReporte.Columns.Clear();
             DBHelper.MostrarReportePorVencer(dataGridViewReporte, comboBoxArea.Text);
             DateTime hoy = DateTime.Today;
@@ -74,12 +79,14 @@ namespace MSM
             string segundoMesPalabra = mesDos.ToString("MMM-dd-yyyy");
             string tercerMesPalabra = mesTres.ToString("MMM-dd-yyyy");
             string cuartoMesPalabra = mesCuatro.ToString("MMM-dd-yyyy");
+            metroProgressBarCarga.Value = 50;
 
             dataGridViewReporte.Columns.Add(primerMesPalabra, primerMesPalabra);
             dataGridViewReporte.Columns.Add(segundoMesPalabra,segundoMesPalabra);
             dataGridViewReporte.Columns.Add(tercerMesPalabra, tercerMesPalabra);
             dataGridViewReporte.Columns.Add(cuartoMesPalabra, cuartoMesPalabra);
 
+            metroProgressBarCarga.Value = 70;
             for (int i = 5; dataGridViewReporte.ColumnCount > i; i++)
             {
                 for (int x = 0; dataGridViewReporte.RowCount > x; x++)
@@ -113,7 +120,7 @@ namespace MSM
                             {
                             dataGridViewReporte.Rows[x].Cells[i].Style.BackColor = Color.Red;
                             }
-
+                            metroProgressBarCarga.Value = 90;
 
                             //var fechaVigencia = DateTime.Parse(fechaAVencer);
                             //var fechaProyectada = DateTime.Parse(mesProyectado);
@@ -139,6 +146,12 @@ namespace MSM
                 }
                 //dataGridViewMultiskill.Columns[i].DefaultCellStyle = norStyle;  //Metodo para que aparezcan las meatballs
             }
+            dataGridViewReporte.Columns[1].Frozen = true;
+
+            metroProgressBarCarga.Value = 100;
+            labelcargando.Text = "Carga finalizada / Upload finished";
+
+            metroProgressBarCarga.Visible = false; 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -158,6 +171,72 @@ namespace MSM
         private void buttonCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        public void exportarexcel(DataGridView datatabla) //Metodo para exportar los datos de data griedview a excell
+        {
+            Microsoft.Office.Interop.Excel.Application exportarexcel = new Microsoft.Office.Interop.Excel.Application();
+
+            exportarexcel.Application.Workbooks.Add(true);
+
+            int indicecolumna = 0;
+
+            foreach (DataGridViewColumn columna in datatabla.Columns)
+            {
+                indicecolumna++;
+
+                exportarexcel.Cells[1, indicecolumna] = columna.Name;
+
+            }
+            int indicefila = 0;
+
+            foreach (DataGridViewRow fila in datatabla.Rows)
+            {
+                indicefila++;
+                indicecolumna = 0;
+
+                foreach (DataGridViewColumn columna in datatabla.Columns)
+                {
+                    indicecolumna++;
+                    exportarexcel.Cells[indicefila + 1, indicecolumna] = fila.Cells[columna.Name].Value;
+                }
+
+
+
+
+            }
+            exportarexcel.Visible = true;
+        }
+
+
+
+        private void pictureBoxExcel_Click(object sender, EventArgs e)
+        {
+            labelcargando.Text = "Cargando / Loading ";
+            labelcargando.Visible = true;
+            metroProgressBarCarga.Visible = true;    //Mostramos barra de loading y asi el porcentaje que ira aumentando
+            metroProgressBarCarga.Value = 10;
+            string mensaje = "La información descargada es solo para fines de consulta y puede variar, para información oficial consultar la publicada en MSM/Training app                                                                        " +
+                "                                                                                                         " +
+                "The downloaded information is only for consultation purposes and may vary, for official information consult the published in MSM/Training app ";
+
+
+            MessageBox.Show(mensaje, "Advertencia / Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //^Mensaje que avisa que la informacion exportada a excell no es oficial 
+            metroProgressBarCarga.Value = 20;
+            metroProgressBarCarga.Value = 30;
+            metroProgressBarCarga.Value = 40;
+            metroProgressBarCarga.Value = 50;
+            metroProgressBarCarga.Value = 60;
+            metroProgressBarCarga.Value = 70;
+            metroProgressBarCarga.Value = 80;
+            metroProgressBarCarga.Value = 95;
+            exportarexcel(dataGridViewReporte);
+            metroProgressBarCarga.Value = 100;
+            labelcargando.Text = "Carga finalizada / Upload finished";
+
+            metroProgressBarCarga.Visible = false; 
+
         }
     }
 }
