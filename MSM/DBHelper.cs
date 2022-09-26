@@ -566,11 +566,536 @@ namespace MSM
             }
         }
 
+        public void ObtenerCertificacionEntrenamiento(ComboBox comboBoxCertificacion, ComboBox comboBoxcodigo)
+        {
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
 
+
+
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+                conexion.Open();
+
+
+
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_select", conexion))
+                {
+
+
+
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    dataReader = sqlCommand.ExecuteReader();
+
+
+
+                    while (dataReader.Read())
+                    {
+                        comboBoxCertificacion.Items.Add(dataReader["nombre"].ToString());
+                        comboBoxcodigo.Items.Add(dataReader["codigo"].ToString());
+
+
+
+                    }
+
+
+
+                    dataReader.Close();
+                    conexion.Close();
+                }
+            }
+        }
+
+
+
+        public void ObtenerCertificacionEntrenamientoCodigo(ComboBox comboBoxCertificacion, ComboBox comboBoxcodigo)
+        {
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+            string codigo = "";
+
+
+
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+                conexion.Open();
+
+
+
+                //using (SqlCommand sqlCommand = new SqlCommand (), conexion))AQUI ME QUEDE
+                {
+
+
+
+                }
+
+
+
+            }
+
+        }
+        public string ObtenerCodigoByCertificacionEntrenamiento(string comboBoxNombre)
+        {
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+            //variable para guardar el codigo que se obtiene por medio de la certificacion o entrenamiento
+            string codigo = "";
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+
+                //Open the connection
+                conexion.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certification_entrenamiento_select_codigo_by_certificacion_entrenamiento", conexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Nombre", comboBoxNombre);
+                    dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        codigo = codigo + dataReader.GetValue(0);
+
+                    }
+                    dataReader.Close();
+                    conexion.Close();
+                }
+
+            }
+            return codigo;
+        }
+        public string ObtenerCertificacionEntrenamientoByCodigo(string comboBoxCodigo)
+        {
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+            //variable para guardar el nombre que se obtiene por medio del codigo
+            string nombre = "";
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+
+                //Open the connection
+                conexion.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certification_entrenamiento_select_certificacion_entrenamiento_by_codigo", conexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Codigo", comboBoxCodigo);
+                    dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        nombre = nombre + dataReader.GetValue(0);
+
+                    }
+                    dataReader.Close();
+                    conexion.Close();
+                }
+
+            }
+            return nombre;
+        }
+
+        public void CambiarCodigo(string antiguo, string nuevo)
+        {
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+
+                //Open the connection
+                conexion.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certification_entrenamiento_update_codigo", conexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Codigo", antiguo);
+                    sqlCommand.Parameters.AddWithValue("@NuevoCodigo", nuevo);
+                    dataReader = sqlCommand.ExecuteReader();
+
+                    dataReader.Close();
+                    conexion.Close();
+                }
+
+            }
+
+        }
+
+        public string RegistrarCambioCodigo(string antiguo, string nuevo, string nombre)
+        {
+            DataTable tabla = new DataTable();
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+
+                //Open the connection
+                conexion.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_registro_cambios_codigo_insert", conexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Codigo", antiguo);
+                    sqlCommand.Parameters.AddWithValue("@NuevoCodigo", nuevo);
+                    sqlCommand.Parameters.AddWithValue("@Nombre", nombre);
+                    sqlCommand.Parameters.AddWithValue("@Responsable", Data.CUENTA);
+                    dataReader = sqlCommand.ExecuteReader();
+                    tabla.Load(dataReader);
+                    dataReader.Close();
+                    conexion.Close();
+                }
+
+            }
+            string mensaje = "";
+            if (tabla.Rows.Count > 0)
+            {
+
+                mensaje = "Cambio efectuado: " + tabla.Rows[0].Field<decimal>("id");
+
+                return mensaje;
+            }
+            else
+            {
+                mensaje = "Error no hubo un cambio";
+                return mensaje;
+            }
+
+        }
+
+        public void ObtenerTipo(ComboBox comboBoxTipo)
+        {
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+
+
+
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+                conexion.Open();
+
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_select_tipo", conexion))
+                {
+
+
+
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    dataReader = sqlCommand.ExecuteReader();
+
+
+
+                    while (dataReader.Read())
+                    {
+                        comboBoxTipo.Items.Add(dataReader["tipo"].ToString());
+
+                    }
+
+
+
+                    dataReader.Close();
+                    conexion.Close();
+                }
+            }
+        }
+
+        public void ObtenerAgente(ComboBox comboBoxAgente)
+        {
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+
+
+
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+                conexion.Open();
+
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_select_agente", conexion))
+                {
+
+
+
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    dataReader = sqlCommand.ExecuteReader();
+
+
+
+                    while (dataReader.Read())
+                    {
+                        comboBoxAgente.Items.Add(dataReader["agente"].ToString());
+
+                    }
+
+
+
+                    dataReader.Close();
+                    conexion.Close();
+                }
+            }
+        }
+
+        public void ObtenerFuncion(ComboBox comboBoxFuncion)
+        {
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+
+
+
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+                conexion.Open();
+
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_select_funcion", conexion))
+                {
+
+
+
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    dataReader = sqlCommand.ExecuteReader();
+
+
+
+                    while (dataReader.Read())
+                    {
+                        comboBoxFuncion.Items.Add(dataReader["funcion"].ToString());
+
+                    }
+
+
+
+                    dataReader.Close();
+                    conexion.Close();
+                }
+            }
+        }
+
+        public void InsertCertificacionesEntrenamientos(string textBoxNombre, string textBoxCodigo, string comboBoxTipo,
+                                            string textBoxFrecuencia, string comboBoxAgente, string comboBoxFuncion, string textBoxDuracion)
+        {
+            DataTable table = new DataTable();
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+            using (SqlConnection cnn = new SqlConnection(sqlDataSource))
+            {
+
+                //Open the connection
+                cnn.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_insert", cnn))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Nombre", textBoxNombre);
+                    sqlCommand.Parameters.AddWithValue("@Codigo", textBoxCodigo);
+                    sqlCommand.Parameters.AddWithValue("@Tipo", comboBoxTipo);
+                    sqlCommand.Parameters.AddWithValue("@Frecuencia", textBoxFrecuencia);
+                    sqlCommand.Parameters.AddWithValue("@Agente", comboBoxAgente);
+                    sqlCommand.Parameters.AddWithValue("@Funcion", comboBoxFuncion);
+                    sqlCommand.Parameters.AddWithValue("@Duracion", textBoxDuracion);
+                    dataReader = sqlCommand.ExecuteReader();
+                    table.Load(dataReader);
+                    dataReader.Close();
+                    cnn.Close();
+
+                }
+            }
 
 
 
         }
+        public void ObtenerAreasEnCheckedListBox(CheckedListBox checkedListBoxAreas)
+        {
+
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+
+                //Open the connection
+                conexion.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_area_select", conexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        checkedListBoxAreas.Items.Add(dataReader["nombre"].ToString());
+
+                    }
+
+                    dataReader.Close();
+                    conexion.Close();
+                }
+
+            }
+        }
+
+        public void InsertCertificacionEntrenamientoEnArea(string area)
+        {
+
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+
+                //Open the connection
+                conexion.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_area_insert", conexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Area", area);
+                    sqlCommand.Parameters.AddWithValue("@Codigo", Data.TEMPCODIGO);
+                    dataReader = sqlCommand.ExecuteReader();
+
+                    dataReader.Close();
+                    conexion.Close();
+
+                }
+            }
+
+
+
+        }
+
+        public string ObtenerActivoByCodigo(string codigo)
+        {
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+            //variable para guardar el que se obtiene por medio del codigo
+            string activo = "";
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+
+                //Open the connection
+                conexion.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenaminento_select_activo_by_codigo", conexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Codigo", codigo);
+                    dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        activo = activo + dataReader.GetValue(0);
+
+                    }
+                    dataReader.Close();
+                    conexion.Close();
+                }
+
+            }
+            if (activo == "True")
+            {
+                activo = "Activo";
+
+            }
+            else
+            {
+                if (activo == "False")
+                {
+                    activo = "Desactivado";
+                }
+            }
+            return activo;
+        }
+
+
+        public string ObtenerProcesoByCodigo(string comboBoxArea, string codigo)
+        {
+
+
+
+            string sqlDataSource = connectionString;
+
+            SqlDataReader dataReader;
+            string proceso = "";
+            using (SqlConnection cnn = new SqlConnection(sqlDataSource))
+            {
+                cnn.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_area_select_proceso_by_codigo", cnn))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Area", comboBoxArea);
+                    sqlCommand.Parameters.AddWithValue("@Codigo", codigo);
+                    dataReader = sqlCommand.ExecuteReader();
+
+
+
+                    while (dataReader.Read())
+                    {
+                        proceso = dataReader.GetValue(0).ToString();
+
+                    }
+                    dataReader.Close();
+                    cnn.Close();
+                }
+                return proceso;
+            }
+        }
+
+
+        public List<string> ObtenerProcesos(string comboBoxArea)
+        {
+            string sqlDataSource = connectionString;
+
+            SqlDataReader dataReader;
+            List<string> procesos = new List<string>();
+            using (SqlConnection cnn = new SqlConnection(sqlDataSource))
+            {
+                cnn.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_area_select_proceso", cnn))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Area", comboBoxArea);
+
+                    dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        procesos.Add(dataReader.GetValue(0).ToString());
+                    }
+                    dataReader.Close();
+                    cnn.Close();
+                }
+                return procesos;
+            }
+        }
+        public string ComprobarPerteneceArea(string noEmpleado)
+        {
+
+
+
+            string sqlDataSource = connectionString;
+
+            SqlDataReader dataReader;
+            string proceso = "";
+            using (SqlConnection cnn = new SqlConnection(sqlDataSource))
+            {
+                cnn.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_area_select_proceso_by_codigo", cnn))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@NoEmpleado", noEmpleado);
+                    sqlCommand.Parameters.AddWithValue("@Area", Data.TEMPAREA);
+                    dataReader = sqlCommand.ExecuteReader();
+
+
+
+                    while (dataReader.Read())
+                    {
+                        proceso = dataReader.GetValue(0).ToString();
+                    }
+                    dataReader.Close();
+                    cnn.Close();
+                }
+                return proceso;
+            }
+        }
+
     }
-
-
+}

@@ -53,58 +53,93 @@ namespace MSM
 
         public void diseñoMSM()
         {
-         
 
+            string certificacionEntrenamiento, fechaNivelCompetencia, fechaVencimiento, proceso;
+            string[] informacionCertificacion, certificacionEntrenamientoNombre;
+            string[] procesos;
+            int[] colorProcesosRojo = new int[100];
+            int[] colorProcesosAzul = new int[100];
+            int[] colorProcesosVerde = new int[100];
+
+            procesos = DBHelper.ObtenerProcesos(comboBoxArea.Text).ToArray();
+            int rojo = 0, verde = 65, azul = 50;
+
+            for (int o = 0; o <= procesos.Length; o++)
+            {
+                colorProcesosRojo[o] = rojo;
+                colorProcesosAzul[o] = azul;
+                colorProcesosVerde[o] = verde;
+                rojo = rojo + 5;
+                azul = azul + 15;
+                verde = verde + 10;
+            }
 
             for (int i = 2; dataGridViewMultiskill.ColumnCount > i; i++)
             {
+                char separador = '|';
+                certificacionEntrenamiento = dataGridViewMultiskill.Columns[i].HeaderText;
+                certificacionEntrenamientoNombre = certificacionEntrenamiento.Split(separador);
+
                 for (int x = 0; dataGridViewMultiskill.RowCount > x; x++)
                 {
-                    if (dataGridViewMultiskill.Rows[x].Cells[i].Value != null)
-                    {
-                        if (dataGridViewMultiskill.Rows[x].Cells[i].Value.ToString() == String.Empty)
-                            dataGridViewMultiskill.Rows[x].Cells[i].Value = 0;
-                    }
-               
-                    
-             
+
+                    //if (dataGridViewMultiskill.Rows[x].Cells[i].Value != null)
+                    //{
+                    //    if (dataGridViewMultiskill.Rows[x].Cells[i].Value.ToString() == String.Empty)
+                    //        dataGridViewMultiskill.Rows[x].Cells[i].Value = 0;
+                    //}
                     try
                     {
                         char delimitador = '[';
-                        char separador = '-';
+
                         if (dataGridViewMultiskill.Rows[x].Cells[i].Value != null)
                         {
-                            string fechaNivelCompetencia = dataGridViewMultiskill.Rows[x].Cells[i].Value.ToString();
-                            string[] informacionCertificacion = fechaNivelCompetencia.Split(delimitador);
-                            string certificacionEntrenamiento = dataGridViewMultiskill.Columns[i].HeaderText;
-                            string[] certificacionEntrenamientoNombre = certificacionEntrenamiento.Split(separador);
-                            string fechaVencimiento = informacionCertificacion[1];
-                            string duracion = DBHelper.ObtenerDuracionCertificacionEntrenamiento(certificacionEntrenamientoNombre[1]);
-                            int duracionDias = int.Parse(duracion);
-                            fechaVencimiento = fechaVencimiento.Remove(fechaVencimiento.Length - 1);
-
-                            var fechaVigencia = DateTime.Parse(fechaVencimiento);
-                            fechaVigencia = fechaVigencia.AddDays(-duracionDias);
-                            if (fechaVigencia <= DateTime.Today)
+                            fechaNivelCompetencia = dataGridViewMultiskill.Rows[x].Cells[i].Value.ToString();
+                            informacionCertificacion = fechaNivelCompetencia.Split(delimitador);
+                            fechaVencimiento = informacionCertificacion[1];
+                            if (informacionCertificacion[1] != "")
                             {
-                                dataGridViewMultiskill.Rows[x].Cells[i].Style.BackColor = Color.Red;
-                               
+                                string duracion = DBHelper.ObtenerDuracionCertificacionEntrenamiento(certificacionEntrenamientoNombre[0]);
+                                int duracionDias = int.Parse(duracion);
+                                fechaVencimiento = fechaVencimiento.Remove(fechaVencimiento.Length - 1);
+
+                                var fechaVigencia = DateTime.Parse(fechaVencimiento);
+                                fechaVigencia = fechaVigencia.AddDays(-duracionDias);
+                                if (fechaVigencia <= DateTime.Today)
+                                {
+                                    dataGridViewMultiskill.Rows[x].Cells[i].Style.BackColor = Color.Red;
 
 
+                                }
                             }
-
-                           
                         }
                     }
                     catch
                     {
 
-                       
-                      
                     }
                 }
+
+                certificacionEntrenamientoNombre[1] = certificacionEntrenamientoNombre[1].Remove(0, 2);
+                proceso = DBHelper.ObtenerProcesoByCodigo(comboBoxArea.Text, certificacionEntrenamientoNombre[1]);
+
+                for (int x = 0; x <= procesos.Length - 1; x++)
+                {
+                    if (procesos[x] == proceso)
+                    {
+                        dataGridViewMultiskill.Columns[i].HeaderCell.Style.BackColor = Color.FromArgb(colorProcesosRojo[x], colorProcesosAzul[x], colorProcesosVerde[x]);
+                        break;
+                    }
+                }
+
+
+
+
+
                 //dataGridViewMultiskill.Columns[i].DefaultCellStyle = norStyle;  //Metodo para que aparezcan las meatballs
             }
+
+
         }
 
         private void MSM_Area_Load(object sender, EventArgs e)
