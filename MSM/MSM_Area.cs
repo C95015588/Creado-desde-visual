@@ -145,6 +145,10 @@ namespace MSM
         private void MSM_Area_Load(object sender, EventArgs e)
         {
             DBHelper.ObtenerAreasEnComboBox(comboBoxArea);
+            Cambio_Area funcionCambioArea = new Cambio_Area();
+            funcionCambioArea.TopLevel = false;
+           panelCambioArea.Controls.Add(funcionCambioArea);
+            funcionCambioArea.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -172,13 +176,7 @@ namespace MSM
             diseñoMSM();
             metroProgressBarCarga.Value = 100;
             labelcargando.Text = "Carga finalizada / Upload finished";
-
-
-
-
-
-         
-
+            Data.TEMPAREA = comboBoxArea.Text;
             metroProgressBarCarga.Visible = false;
             dataGridViewMultiskill.Columns[1].Frozen = true;
 

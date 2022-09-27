@@ -1073,11 +1073,11 @@ namespace MSM
             string sqlDataSource = connectionString;
 
             SqlDataReader dataReader;
-            string proceso = "";
+            string existencia = "";
             using (SqlConnection cnn = new SqlConnection(sqlDataSource))
             {
                 cnn.Open();
-                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_area_select_proceso_by_codigo", cnn))
+                using (SqlCommand sqlCommand = new SqlCommand("p_area_no_empleado", cnn))
                 {
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.Parameters.AddWithValue("@NoEmpleado", noEmpleado);
@@ -1088,12 +1088,12 @@ namespace MSM
 
                     while (dataReader.Read())
                     {
-                        proceso = dataReader.GetValue(0).ToString();
+                        existencia = dataReader.GetValue(0).ToString();
                     }
                     dataReader.Close();
                     cnn.Close();
                 }
-                return proceso;
+                return existencia;
             }
         }
 

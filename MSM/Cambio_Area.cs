@@ -20,7 +20,8 @@ namespace MSM
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string existencia = DBHelper.ComprobarPerteneceArea(textBoxNumeroEmpleado.Text);
+            MessageBox.Show(existencia);
         }
 
         private void textBoxNumeroEmpleado_TextChanged(object sender, EventArgs e)
@@ -30,14 +31,14 @@ namespace MSM
             int contadorletras = 0;
             contadorletras = textBoxNumeroEmpleado.Text.Trim().Length;
 
-            if (contadorletras > 7 && contadorletras < 9)
+            if (contadorletras == 8)
             {
                 //Obtiene el nombre del usuario y lo guarda en una variable para despues
                 //mostrarlo en pantalla
                 DBHelper.ObtenerNombreEmpleadoViaNumero(textBoxNumeroEmpleado.Text);
                 labelMostrarNombre.Text = Data.NOMBREEMPLEADO;
             }
-            if (contadorletras <= 7 || contadorletras >= 8 ) 
+            if (contadorletras <= 7 || contadorletras > 8) 
             {
                 labelMostrarNombre.Text = "";
             }
