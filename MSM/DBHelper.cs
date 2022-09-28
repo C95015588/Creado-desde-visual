@@ -1068,8 +1068,6 @@ namespace MSM
         public string ComprobarPerteneceArea(string noEmpleado)
         {
 
-
-
             string sqlDataSource = connectionString;
 
             SqlDataReader dataReader;
@@ -1097,5 +1095,44 @@ namespace MSM
             }
         }
 
+        public string InsertarEmpleadoEnArea(string noEmpleado, string area)
+        {
+            DataTable table = new DataTable();
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+
+                //Open the connection
+                conexion.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_area_no_empleado_update", conexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Area", area);
+                    sqlCommand.Parameters.AddWithValue("@NoEmpleado", noEmpleado);
+
+                    dataReader = sqlCommand.ExecuteReader();
+                    table.Load(dataReader);
+                    dataReader.Close();
+                    conexion.Close();
+
+                }
+            }
+
+            string mensaje = "";
+            if (table.Rows.Count > 0)
+            {
+                
+                mensaje = "Confirmacion de: " + table.Rows[0].Field<decimal>("id");
+
+                return mensaje;
+            }
+            else
+            {
+                mensaje = "Request denied";
+                return mensaje;
+            }
+        }
     }
 }

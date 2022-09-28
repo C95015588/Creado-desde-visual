@@ -36,7 +36,7 @@
             // 
             // textBoxNumeroEmpleado
             // 
-            this.textBoxNumeroEmpleado.Location = new System.Drawing.Point(24, 59);
+            this.textBoxNumeroEmpleado.Location = new System.Drawing.Point(24, 36);
             this.textBoxNumeroEmpleado.Name = "textBoxNumeroEmpleado";
             this.textBoxNumeroEmpleado.Size = new System.Drawing.Size(187, 20);
             this.textBoxNumeroEmpleado.TabIndex = 0;
@@ -45,7 +45,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 29);
+            this.label1.Location = new System.Drawing.Point(21, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(136, 114);
+            this.button1.Location = new System.Drawing.Point(136, 100);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -64,7 +64,7 @@
             // labelMostrarNombre
             // 
             this.labelMostrarNombre.AutoSize = true;
-            this.labelMostrarNombre.Location = new System.Drawing.Point(236, 61);
+            this.labelMostrarNombre.Location = new System.Drawing.Point(27, 69);
             this.labelMostrarNombre.Name = "labelMostrarNombre";
             this.labelMostrarNombre.Size = new System.Drawing.Size(0, 13);
             this.labelMostrarNombre.TabIndex = 3;
@@ -73,7 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(365, 166);
             this.Controls.Add(this.labelMostrarNombre);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
