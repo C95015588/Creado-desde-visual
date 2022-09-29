@@ -359,6 +359,7 @@
             this.panelCambioArea.Name = "panelCambioArea";
             this.panelCambioArea.Size = new System.Drawing.Size(266, 98);
             this.panelCambioArea.TabIndex = 38;
+            this.panelCambioArea.Visible = false;
             this.panelCambioArea.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCambioArea_Paint);
             // 
             // MSM_Area
