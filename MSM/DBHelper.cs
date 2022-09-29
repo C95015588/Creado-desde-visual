@@ -1106,7 +1106,7 @@ namespace MSM
                 //Open the connection
                 conexion.Open();
 
-                using (SqlCommand sqlCommand = new SqlCommand("p_area_no_empleado_update", conexion))
+                using (SqlCommand sqlCommand = new SqlCommand("p_area_no_empleado_insert", conexion))
                 {
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.Parameters.AddWithValue("@Area", area);
@@ -1124,13 +1124,13 @@ namespace MSM
             if (table.Rows.Count > 0)
             {
                 
-                mensaje = "Confirmacion de: " + table.Rows[0].Field<decimal>("id");
+                mensaje = "Confirmacion de: ";
 
                 return mensaje;
             }
             else
             {
-                mensaje = "Request denied";
+                mensaje = "No se ha podido hacer el cambio";
                 return mensaje;
             }
         }

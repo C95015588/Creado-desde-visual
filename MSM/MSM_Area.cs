@@ -81,6 +81,12 @@ namespace MSM
                 rojo = rojo + 5;
                 azul = azul + 15;
                 verde = verde + 10;
+                if (rojo >= 255 || azul >= 255 || verde >= 255)
+                {
+                    rojo = 50;
+                    azul = 20;
+                    verde = 10;
+                }
             }
 
                  float employeesCount = (dataGridViewMultiskill.RowCount / 50) + 1;

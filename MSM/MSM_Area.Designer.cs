@@ -355,9 +355,9 @@
             // 
             // panelCambioArea
             // 
-            this.panelCambioArea.Location = new System.Drawing.Point(1061, 123);
+            this.panelCambioArea.Location = new System.Drawing.Point(941, 107);
             this.panelCambioArea.Name = "panelCambioArea";
-            this.panelCambioArea.Size = new System.Drawing.Size(130, 51);
+            this.panelCambioArea.Size = new System.Drawing.Size(266, 98);
             this.panelCambioArea.TabIndex = 38;
             this.panelCambioArea.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCambioArea_Paint);
             // 

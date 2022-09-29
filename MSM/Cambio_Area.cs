@@ -28,6 +28,8 @@ namespace MSM
                 if (existencia == "")
                 {
                     string mensaje = DBHelper.InsertarEmpleadoEnArea(textBoxNumeroEmpleado.Text, Data.TEMPAREA);
+                    mensaje = mensaje + labelMostrarNombre + " agregado a el area " + Data.TEMPAREA;
+                    MessageBox.Show(mensaje);
                 }
                 else
                 {
@@ -60,6 +62,9 @@ namespace MSM
             }
         }
 
+        private void Cambio_Area_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
