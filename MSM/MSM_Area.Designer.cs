@@ -72,7 +72,7 @@
             this.dataGridViewMultiskill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewMultiskill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridViewMultiskill.BackgroundColor = System.Drawing.Color.Black;
-            this.dataGridViewMultiskill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridViewMultiskill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridViewMultiskill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -359,6 +359,7 @@
             this.panelCambioArea.Name = "panelCambioArea";
             this.panelCambioArea.Size = new System.Drawing.Size(444, 541);
             this.panelCambioArea.TabIndex = 38;
+            this.panelCambioArea.Visible = false;
             // 
             // MSM_Area
             // 
@@ -381,6 +382,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewMultiskill);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MSM_Area";
             this.Opacity = 0.85D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

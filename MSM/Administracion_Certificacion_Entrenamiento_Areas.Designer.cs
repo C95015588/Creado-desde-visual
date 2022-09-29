@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administracion_Certificacion_Entrenamiento_Areas));
             this.checkedListBoxAreas = new System.Windows.Forms.CheckedListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             this.ClientSize = new System.Drawing.Size(225, 493);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkedListBoxAreas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Administracion_Certificacion_Entrenamiento_Areas";
             this.Text = "Administracion_Certificacion_Entrenamiento_Areas";
             this.Load += new System.EventHandler(this.Administracion_Certificacion_Entrenamiento_Areas_Load);
