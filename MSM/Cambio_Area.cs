@@ -28,7 +28,8 @@ namespace MSM
                 if (existencia == "")
                 {
                     string mensaje = DBHelper.InsertarEmpleadoEnArea(textBoxNumeroEmpleado.Text, Data.TEMPAREA);
-                    mensaje = mensaje + labelMostrarNombre + " agregado a el area " + Data.TEMPAREA;
+                    mensaje = mensaje + labelMostrarNombre.Text + " agregado a el area " + Data.TEMPAREA + "\n" +
+                                        labelMostrarNombre.Text + " add to " + Data.TEMPAREA + " area"; 
                     MessageBox.Show(mensaje);
                 }
                 else
@@ -66,5 +67,42 @@ namespace MSM
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            if (labelMostrarNombre.Text != "")
+            {
+
+
+                string existencia = DBHelper.ComprobarPerteneceArea(textBoxNumeroEmpleado.Text);
+                if (existencia != "")
+                {
+                     DBHelper.EliminarEmpleadoEnArea(textBoxNumeroEmpleado.Text, Data.TEMPAREA);
+                    string mensaje =    labelMostrarNombre.Text + " eliminado del area " + Data.TEMPAREA + "\n" +
+                                        labelMostrarNombre.Text + " delete from " + Data.TEMPAREA ;
+                    MessageBox.Show(mensaje);
+                }
+                else
+                {
+                    MessageBox.Show("El empleado no pertenece a esta area");
+                }
+            }
+            else
+            {
+                MessageBox.Show("El numero de empleado es incorrecto");
+            }
+        }
+
+        private void labelMostrarNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

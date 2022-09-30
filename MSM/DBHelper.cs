@@ -1111,6 +1111,7 @@ namespace MSM
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.Parameters.AddWithValue("@Area", area);
                     sqlCommand.Parameters.AddWithValue("@NoEmpleado", noEmpleado);
+                    sqlCommand.Parameters.AddWithValue("@Requisitor", Data.CUENTA);
 
                     dataReader = sqlCommand.ExecuteReader();
                     table.Load(dataReader);
@@ -1124,6 +1125,46 @@ namespace MSM
             if (table.Rows.Count > 0)
             {
                 
+                mensaje = "Confirmacion de: ";
+
+                return mensaje;
+            }
+            else
+            {
+                mensaje = "No se ha podido hacer el cambio";
+                return mensaje;
+            }
+        }
+        public string EliminarEmpleadoEnArea(string noEmpleado, string area)
+        {
+            DataTable table = new DataTable();
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+
+                //Open the connection
+                conexion.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_area_no_empleado_delete", conexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Area", area);
+                    sqlCommand.Parameters.AddWithValue("@NoEmpleado", noEmpleado);
+                    sqlCommand.Parameters.AddWithValue("@Requisitor", Data.CUENTA);
+
+                    dataReader = sqlCommand.ExecuteReader();
+                    table.Load(dataReader);
+                    dataReader.Close();
+                    conexion.Close();
+
+                }
+            }
+
+            string mensaje = "";
+            if (table.Rows.Count > 0)
+            {
+
                 mensaje = "Confirmacion de: ";
 
                 return mensaje;

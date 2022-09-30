@@ -30,15 +30,16 @@
         {
             this.textBoxNumeroEmpleado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAgregar = new System.Windows.Forms.Button();
             this.labelMostrarNombre = new System.Windows.Forms.Label();
+            this.buttonBorrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxNumeroEmpleado
             // 
             this.textBoxNumeroEmpleado.Location = new System.Drawing.Point(12, 30);
             this.textBoxNumeroEmpleado.Name = "textBoxNumeroEmpleado";
-            this.textBoxNumeroEmpleado.Size = new System.Drawing.Size(187, 20);
+            this.textBoxNumeroEmpleado.Size = new System.Drawing.Size(288, 20);
             this.textBoxNumeroEmpleado.TabIndex = 0;
             this.textBoxNumeroEmpleado.TextChanged += new System.EventHandler(this.textBoxNumeroEmpleado_TextChanged);
             // 
@@ -50,16 +51,17 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button1
+            // buttonAgregar
             // 
-            this.button1.Location = new System.Drawing.Point(124, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAgregar.Location = new System.Drawing.Point(225, 63);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(75, 23);
+            this.buttonAgregar.TabIndex = 2;
+            this.buttonAgregar.Text = "Agregar / Add";
+            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelMostrarNombre
             // 
@@ -68,16 +70,29 @@
             this.labelMostrarNombre.Name = "labelMostrarNombre";
             this.labelMostrarNombre.Size = new System.Drawing.Size(0, 13);
             this.labelMostrarNombre.TabIndex = 3;
+            this.labelMostrarNombre.Click += new System.EventHandler(this.labelMostrarNombre_Click);
+            // 
+            // buttonBorrar
+            // 
+            this.buttonBorrar.Location = new System.Drawing.Point(118, 63);
+            this.buttonBorrar.Name = "buttonBorrar";
+            this.buttonBorrar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBorrar.TabIndex = 4;
+            this.buttonBorrar.Text = "Borrar / Delete";
+            this.buttonBorrar.UseVisualStyleBackColor = true;
+            this.buttonBorrar.Click += new System.EventHandler(this.button2_Click);
             // 
             // Cambio_Area
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 120);
+            this.ClientSize = new System.Drawing.Size(312, 127);
+            this.Controls.Add(this.buttonBorrar);
             this.Controls.Add(this.labelMostrarNombre);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAgregar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxNumeroEmpleado);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cambio_Area";
             this.Text = "Cambio_Area";
             this.Load += new System.EventHandler(this.Cambio_Area_Load);
@@ -90,7 +105,8 @@
 
         private System.Windows.Forms.TextBox textBoxNumeroEmpleado;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAgregar;
         private System.Windows.Forms.Label labelMostrarNombre;
+        private System.Windows.Forms.Button buttonBorrar;
     }
 }
