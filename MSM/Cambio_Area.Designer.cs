@@ -79,7 +79,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxNumeroEmpleado);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cambio_Area";
             this.Text = "Cambio_Area";
             this.Load += new System.EventHandler(this.Cambio_Area_Load);
@@ -87,7 +86,7 @@
             this.PerformLayout();
 
         }
-
+    
         #endregion
 
         private System.Windows.Forms.TextBox textBoxNumeroEmpleado;
