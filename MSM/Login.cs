@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace MSM
 {
@@ -72,7 +73,8 @@ namespace MSM
             {
                 if (textBoxContraseña.Text == "" || textBoxUsuario.Text == "")
                 {
-                    MessageBox.Show("Escribe tu usuario y contraseña correcto");
+                    MessageBox.Show("Escribe tu usuario y contraseña correcto / Enter your correct username and password" ,                              
+                        "Mensaje / Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -155,6 +157,13 @@ namespace MSM
         private void pictureBoxManual_Click(object sender, EventArgs e)
         {
             //Metodo para mostrar el manual de usuario 
+
+            Process proceso = new Process();
+            proceso.StartInfo.FileName = @"C:\Users\C95023032\Desktop\Training App - USER MANUAL.pdf";
+            proceso.Start();
+
+
+
         }
     }
 }

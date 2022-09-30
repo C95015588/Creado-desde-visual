@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administracion_Certificacion_Entrenamiento));
             this.button1 = new System.Windows.Forms.Button();
             this.comboBoxNombre = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -417,6 +418,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Administracion_Certificacion_Entrenamiento";
             this.Text = "Administracion_Certificacion_Entrenamiento";
             this.Load += new System.EventHandler(this.Administracion_Certificacion_Entrenamiento_Load);
