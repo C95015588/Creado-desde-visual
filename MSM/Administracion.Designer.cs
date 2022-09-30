@@ -128,6 +128,7 @@
             this.buttonReportePorVencer.TabIndex = 8;
             this.buttonReportePorVencer.Text = "Editar certificaciones o entrenamientos/Edit certifications or trainings";
             this.buttonReportePorVencer.UseVisualStyleBackColor = false;
+            this.buttonReportePorVencer.Click += new System.EventHandler(this.buttonReportePorVencer_Click);
             // 
             // label8
             // 

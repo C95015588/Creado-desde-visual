@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSM_Area));
             this.dataGridViewMultiskill = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -55,25 +57,33 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.labelcargando = new System.Windows.Forms.Label();
             this.buttonNivel = new System.Windows.Forms.Button();
+            this.buttonBorrar = new System.Windows.Forms.Button();
+            this.labelMostrarNombre = new System.Windows.Forms.Label();
+            this.buttonAgregar = new System.Windows.Forms.Button();
+            this.textBoxNumeroEmpleado = new System.Windows.Forms.TextBox();
             this.panelCambioArea = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMultiskill)).BeginInit();
             this.TittleBar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExcel)).BeginInit();
+            this.panelCambioArea.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewMultiskill
             // 
+
             dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridViewMultiskill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+
             this.dataGridViewMultiskill.BackgroundColor = System.Drawing.Color.Black;
             this.dataGridViewMultiskill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridViewMultiskill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+
             dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
             dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
@@ -89,17 +99,20 @@
             dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewMultiskill.DefaultCellStyle = dataGridViewCellStyle23;
+
             this.dataGridViewMultiskill.EnableHeadersVisualStyles = false;
             this.dataGridViewMultiskill.Location = new System.Drawing.Point(12, 237);
             this.dataGridViewMultiskill.Name = "dataGridViewMultiskill";
             this.dataGridViewMultiskill.ReadOnly = true;
             this.dataGridViewMultiskill.RowHeadersVisible = false;
+
             dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             dataGridViewCellStyle24.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridViewMultiskill.RowsDefaultCellStyle = dataGridViewCellStyle24;
+
             this.dataGridViewMultiskill.Size = new System.Drawing.Size(1250, 506);
             this.dataGridViewMultiskill.TabIndex = 0;
             this.dataGridViewMultiskill.Visible = false;
@@ -296,7 +309,7 @@
             // 
             // metroProgressBarCarga
             // 
-            this.metroProgressBarCarga.Location = new System.Drawing.Point(721, 151);
+            this.metroProgressBarCarga.Location = new System.Drawing.Point(603, 74);
             this.metroProgressBarCarga.Name = "metroProgressBarCarga";
             this.metroProgressBarCarga.Size = new System.Drawing.Size(156, 10);
             this.metroProgressBarCarga.Style = MetroFramework.MetroColorStyle.Blue;
@@ -331,7 +344,7 @@
             // 
             this.labelcargando.AutoSize = true;
             this.labelcargando.ForeColor = System.Drawing.Color.Transparent;
-            this.labelcargando.Location = new System.Drawing.Point(718, 123);
+            this.labelcargando.Location = new System.Drawing.Point(600, 46);
             this.labelcargando.Name = "labelcargando";
             this.labelcargando.Size = new System.Drawing.Size(105, 13);
             this.labelcargando.TabIndex = 36;
@@ -354,13 +367,53 @@
             this.buttonNivel.Visible = false;
             this.buttonNivel.Click += new System.EventHandler(this.buttonNivel_Click_1);
             // 
+            // buttonBorrar
+            // 
+            this.buttonBorrar.Location = new System.Drawing.Point(8, 71);
+            this.buttonBorrar.Name = "buttonBorrar";
+            this.buttonBorrar.Size = new System.Drawing.Size(63, 23);
+            this.buttonBorrar.TabIndex = 42;
+            this.buttonBorrar.Text = "Borrar / Delete";
+            this.buttonBorrar.UseVisualStyleBackColor = true;
+            this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click);
+            // 
+            // labelMostrarNombre
+            // 
+            this.labelMostrarNombre.AutoSize = true;
+            this.labelMostrarNombre.ForeColor = System.Drawing.Color.White;
+            this.labelMostrarNombre.Location = new System.Drawing.Point(15, 37);
+            this.labelMostrarNombre.Name = "labelMostrarNombre";
+            this.labelMostrarNombre.Size = new System.Drawing.Size(0, 13);
+            this.labelMostrarNombre.TabIndex = 41;
+            // 
+            // buttonAgregar
+            // 
+            this.buttonAgregar.Location = new System.Drawing.Point(115, 71);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(63, 23);
+            this.buttonAgregar.TabIndex = 40;
+            this.buttonAgregar.Text = "Agregar / Add";
+            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
+            // 
+            // textBoxNumeroEmpleado
+            // 
+            this.textBoxNumeroEmpleado.Location = new System.Drawing.Point(8, 14);
+            this.textBoxNumeroEmpleado.Name = "textBoxNumeroEmpleado";
+            this.textBoxNumeroEmpleado.Size = new System.Drawing.Size(276, 20);
+            this.textBoxNumeroEmpleado.TabIndex = 39;
+            this.textBoxNumeroEmpleado.TextChanged += new System.EventHandler(this.textBoxNumeroEmpleado_TextChanged);
+            // 
             // panelCambioArea
             // 
-            this.panelCambioArea.Location = new System.Drawing.Point(941, 107);
+            this.panelCambioArea.Controls.Add(this.buttonBorrar);
+            this.panelCambioArea.Controls.Add(this.textBoxNumeroEmpleado);
+            this.panelCambioArea.Controls.Add(this.labelMostrarNombre);
+            this.panelCambioArea.Controls.Add(this.buttonAgregar);
+            this.panelCambioArea.Location = new System.Drawing.Point(854, 121);
             this.panelCambioArea.Name = "panelCambioArea";
-            this.panelCambioArea.Size = new System.Drawing.Size(266, 98);
+            this.panelCambioArea.Size = new System.Drawing.Size(306, 97);
             this.panelCambioArea.TabIndex = 38;
-            this.panelCambioArea.Visible = false;
             this.panelCambioArea.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCambioArea_Paint);
             // 
             // button3
@@ -417,6 +470,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExcel)).EndInit();
+            this.panelCambioArea.ResumeLayout(false);
+            this.panelCambioArea.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,6 +500,10 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label labelcargando;
         private System.Windows.Forms.Button buttonNivel;
+        private System.Windows.Forms.Button buttonBorrar;
+        private System.Windows.Forms.Label labelMostrarNombre;
+        private System.Windows.Forms.Button buttonAgregar;
+        private System.Windows.Forms.TextBox textBoxNumeroEmpleado;
         private System.Windows.Forms.Panel panelCambioArea;
         private System.Windows.Forms.Button button3;
     }

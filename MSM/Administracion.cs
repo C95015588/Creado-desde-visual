@@ -72,7 +72,14 @@ namespace MSM
 
         private void buttonFechasDeCertificacionesYEntrenaminetos_Click(object sender, EventArgs e)
         {
-            
+        }
+
+        private void buttonReportePorVencer_Click(object sender, EventArgs e)
+        {
+            Administracion_Certificacion_Entrenamiento PantallaAdministracion = new Administracion_Certificacion_Entrenamiento();
+            PantallaAdministracion.Show();
+            this.Hide();
+
         }
     }
 }
