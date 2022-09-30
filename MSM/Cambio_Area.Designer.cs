@@ -93,7 +93,9 @@
             this.Controls.Add(this.buttonAgregar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxNumeroEmpleado);
+
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
             this.Name = "Cambio_Area";
             this.Text = "Cambio_Area";
             this.Load += new System.EventHandler(this.Cambio_Area_Load);
@@ -101,7 +103,7 @@
             this.PerformLayout();
 
         }
-
+    
         #endregion
 
         private System.Windows.Forms.TextBox textBoxNumeroEmpleado;

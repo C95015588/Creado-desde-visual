@@ -79,7 +79,8 @@ namespace MSM
             labelKarde.Visible = true;
             labelKardexIngles.Visible = true;
             buttonTipoDetalle.Visible = true;
-            buttonNivel.Visible = true; 
+            buttonNivel.Visible = true;
+            labelBusinesIngles.Visible = true;
          
            
 
@@ -157,7 +158,7 @@ namespace MSM
             dataGridViewEntrenamientosNoObtenidos.Visible = true;
             labelArea.Visible = true;
             labelEntrenamientosNoObtenidos.Visible = true;
-            labelBannerInglesArea.Visible = true;
+            labelAreaIngles.Visible = true;
             buttonBorrarFiltro.Visible = true;
 
 
@@ -187,7 +188,7 @@ namespace MSM
             dataGridViewEntrenamientosNoObtenidos.Visible = false;
             labelArea.Visible = false;
             labelEntrenamientosNoObtenidos.Visible = false;
-            labelBannerInglesArea.Visible = false;
+            labelAreaIngles.Visible = false;
             buttonBorrarFiltro.Visible = false;
 
 
@@ -203,7 +204,8 @@ namespace MSM
             DBHelper.FiltrarAreaBussinesUnit(comboBoxAreaEmpleado, comboBoxBusinessUnit.Text);
 
             labelBannerFiltrarEntrenamientos.Visible = true;
-            comboBoxAreaEmpleado.Visible = true; 
+            comboBoxAreaEmpleado.Visible = true;
+            labelAreaIngles.Visible = true; 
         }
 
         private void buttonRegresar_Click(object sender, EventArgs e)

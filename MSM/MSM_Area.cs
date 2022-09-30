@@ -356,6 +356,13 @@ namespace MSM
 
         }
 
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            
+        }
+
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
             if (labelMostrarNombre.Text != "")
@@ -431,6 +438,7 @@ namespace MSM
                 labelMostrarNombre.Text = "";
             }
         }
+
     }
 }
 
