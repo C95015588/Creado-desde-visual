@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reporte_Por_Vencer));
             this.dataGridViewReporte = new System.Windows.Forms.DataGridView();
             this.comboBoxArea = new System.Windows.Forms.ComboBox();
             this.Buscar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.TittleBar = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonMinimizar = new System.Windows.Forms.Button();
             this.buttonCerrar = new System.Windows.Forms.Button();
@@ -54,52 +55,58 @@
             this.label5 = new System.Windows.Forms.Label();
             this.labelDescargar = new System.Windows.Forms.Label();
             this.labelcargando = new System.Windows.Forms.Label();
+            this.panelexcell = new System.Windows.Forms.Panel();
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReporte)).BeginInit();
             this.TittleBar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExcel)).BeginInit();
+            this.panelexcell.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewReporte
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewReporte.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewReporte.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewReporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewReporte.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.dataGridViewReporte.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridViewReporte.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewReporte.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewReporte.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewReporte.EnableHeadersVisualStyles = false;
             this.dataGridViewReporte.GridColor = System.Drawing.Color.White;
             this.dataGridViewReporte.Location = new System.Drawing.Point(12, 226);
             this.dataGridViewReporte.Name = "dataGridViewReporte";
             this.dataGridViewReporte.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewReporte.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewReporte.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewReporte.Size = new System.Drawing.Size(896, 323);
             this.dataGridViewReporte.TabIndex = 0;
             // 
@@ -145,6 +152,7 @@
             // TittleBar
             // 
             this.TittleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.TittleBar.Controls.Add(this.button3);
             this.TittleBar.Controls.Add(this.button1);
             this.TittleBar.Controls.Add(this.buttonMinimizar);
             this.TittleBar.Controls.Add(this.buttonCerrar);
@@ -156,6 +164,27 @@
             this.TittleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.TittleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.TittleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Location = new System.Drawing.Point(784, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(34, 30);
+            this.button3.TabIndex = 39;
+            this.button3.Text = "[  ]";
+            this.toolTip1.SetToolTip(this.button3, "\"Maximizar o minimizar / Maximize or minimize \"");
+            this.toolTip2.SetToolTip(this.button3, "\"Maximizar o minimizar / Maximize or minimize \"");
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -286,7 +315,7 @@
             // 
             // metroProgressBarCarga
             // 
-            this.metroProgressBarCarga.Location = new System.Drawing.Point(380, 208);
+            this.metroProgressBarCarga.Location = new System.Drawing.Point(485, 72);
             this.metroProgressBarCarga.Name = "metroProgressBarCarga";
             this.metroProgressBarCarga.Size = new System.Drawing.Size(156, 10);
             this.metroProgressBarCarga.Style = MetroFramework.MetroColorStyle.Blue;
@@ -296,7 +325,7 @@
             // pictureBoxExcel
             // 
             this.pictureBoxExcel.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxExcel.Image")));
-            this.pictureBoxExcel.Location = new System.Drawing.Point(787, 66);
+            this.pictureBoxExcel.Location = new System.Drawing.Point(10, 22);
             this.pictureBoxExcel.Name = "pictureBoxExcel";
             this.pictureBoxExcel.Size = new System.Drawing.Size(47, 36);
             this.pictureBoxExcel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -309,7 +338,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label5.Location = new System.Drawing.Point(841, 86);
+            this.label5.Location = new System.Drawing.Point(64, 42);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 16);
@@ -321,7 +350,7 @@
             this.labelDescargar.AutoSize = true;
             this.labelDescargar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDescargar.ForeColor = System.Drawing.Color.White;
-            this.labelDescargar.Location = new System.Drawing.Point(841, 66);
+            this.labelDescargar.Location = new System.Drawing.Point(64, 22);
             this.labelDescargar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDescargar.Name = "labelDescargar";
             this.labelDescargar.Size = new System.Drawing.Size(62, 16);
@@ -332,12 +361,24 @@
             // 
             this.labelcargando.AutoSize = true;
             this.labelcargando.ForeColor = System.Drawing.Color.Transparent;
-            this.labelcargando.Location = new System.Drawing.Point(399, 183);
+            this.labelcargando.Location = new System.Drawing.Point(504, 47);
             this.labelcargando.Name = "labelcargando";
             this.labelcargando.Size = new System.Drawing.Size(105, 13);
             this.labelcargando.TabIndex = 41;
             this.labelcargando.Text = "Cargando / Loading ";
             this.labelcargando.Visible = false;
+            // 
+            // panelexcell
+            // 
+            this.panelexcell.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelexcell.Controls.Add(this.label5);
+            this.panelexcell.Controls.Add(this.labelDescargar);
+            this.panelexcell.Controls.Add(this.pictureBoxExcel);
+            this.panelexcell.Location = new System.Drawing.Point(777, 44);
+            this.panelexcell.Name = "panelexcell";
+            this.panelexcell.Size = new System.Drawing.Size(130, 73);
+            this.panelexcell.TabIndex = 42;
+            this.panelexcell.Visible = false;
             // 
             // Reporte_Por_Vencer
             // 
@@ -345,10 +386,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(920, 556);
+            this.Controls.Add(this.panelexcell);
             this.Controls.Add(this.labelcargando);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.labelDescargar);
-            this.Controls.Add(this.pictureBoxExcel);
             this.Controls.Add(this.metroProgressBarCarga);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -360,7 +399,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Reporte_Por_Vencer";
-            this.Opacity = 0.85D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "|";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -370,6 +408,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExcel)).EndInit();
+            this.panelexcell.ResumeLayout(false);
+            this.panelexcell.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,5 +437,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelDescargar;
         private System.Windows.Forms.Label labelcargando;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panelexcell;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }

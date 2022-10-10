@@ -159,7 +159,7 @@ namespace MSM
             //Metodo para mostrar el manual de usuario 
 
             Process proceso = new Process();
-            proceso.StartInfo.FileName = @"C:\Users\C95023032\Desktop\Training App - USER MANUAL.pdf";
+            proceso.StartInfo.FileName = @"G:\Goodrich Write Restricted\ACE Boards\Entrenamiento\Training App";     
             proceso.Start();
 
 
@@ -174,8 +174,12 @@ namespace MSM
             }
         }
 
-        private void textBoxUsuario_TextChanged(object sender, EventArgs e)
+        private void textBoxContraseña_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonLogin_Click(this, new EventArgs());
+            }
 
         }
     }

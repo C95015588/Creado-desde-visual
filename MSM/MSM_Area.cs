@@ -183,10 +183,12 @@ namespace MSM
         private void MSM_Area_Load(object sender, EventArgs e)
         {
             DBHelper.ObtenerAreasEnComboBox(comboBoxArea);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             dataGridViewMultiskill.Visible = true;
             labelcargando.Text = "Cargando / Loading ";
             labelcargando.Visible = true;
@@ -205,7 +207,22 @@ namespace MSM
             
             
             buttonNivel.Visible = true;
-            
+
+            if (Data.ESSUPERVISOR == true)
+            {
+                panelCambioArea.Visible = true;
+            }else
+            if (Data.ESADMINISTRADOR == true)
+            {
+                panelCambioArea.Visible = true;
+            }
+            else
+            {
+                panelCambioArea.Visible = false;
+            }
+
+
+
             labelcargando.Text = "Carga finalizada / Upload finished";
             Data.TEMPAREA = comboBoxArea.Text;
             metroProgressBarCarga.Visible = false;
@@ -321,27 +338,33 @@ namespace MSM
 
         private void pictureBoxExcel_Click(object sender, EventArgs e)
         {
-            labelcargando.Text = "Cargando / Loading ";
-            metroProgressBarCarga.Visible = true;
-            metroProgressBarCarga.Value = 10;
-            string mensaje = "La información descargada es solo para fines de consulta y puede variar, para información oficial consultar la publicada en MSM/Training app                                                                        " +
-                "                                                                                                         " +
-                "The downloaded information is only for consultation purposes and may vary, for official information consult the published in MSM/Training app ";
+            string mensaje = "La información descargada es solo para fines de consulta y puede variar, para información oficial consultar la publicada en MSM/Training app" +
+                "\nThe downloaded information is only for consultation purposes and may vary, for official information consult the published in MSM/Training app ";
               
+            
+            DialogResult resultado = MessageBox.Show( mensaje , "Advertencia / Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 
-            MessageBox.Show( mensaje , "Advertencia / Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //^Mensaje que avisa que la informacion exportada a excell no es oficial 
+            if(resultado == DialogResult.OK)
+            {
+                labelcargando.Text = "Cargando / Loading ";
+                metroProgressBarCarga.Visible = true;
+                metroProgressBarCarga.Value = 10;
+
+                metroProgressBarCarga.Value = 20;
+                metroProgressBarCarga.Value = 30;
+                metroProgressBarCarga.Value = 40;
+                exportarexcel(dataGridViewMultiskill);
+                metroProgressBarCarga.Value = 100;
 
 
+                labelcargando.Text = "Carga finalizada / Upload finished";
+            }else
 
-            metroProgressBarCarga.Value = 20;
-            metroProgressBarCarga.Value = 30;
-            metroProgressBarCarga.Value = 40;
-            exportarexcel(dataGridViewMultiskill);
-            metroProgressBarCarga.Value = 100;
+            if(resultado == DialogResult.Cancel)
+            {
 
+            }
 
-            labelcargando.Text = "Carga finalizada / Upload finished";
 
         }
         private void buttonNivel_Click_1(object sender, EventArgs e)
@@ -357,9 +380,18 @@ namespace MSM
         }
 
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //Metodo para hacer grande o chiquita la pantalla
         {
-            this.WindowState = FormWindowState.Maximized;
+          if(this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+                
+            }
             
         }
 
@@ -375,16 +407,16 @@ namespace MSM
                     string mensaje = DBHelper.InsertarEmpleadoEnArea(textBoxNumeroEmpleado.Text, Data.TEMPAREA);
                     mensaje = mensaje + labelMostrarNombre.Text + " agregado a el area " + Data.TEMPAREA + "\n" +
                                         labelMostrarNombre.Text + " add to " + Data.TEMPAREA + " area";
-                    MessageBox.Show(mensaje);
+                 MessageBox.Show(mensaje, "Agregar / Add" , MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    MessageBox.Show("El empleado ya pertenece a esta area");
+                    MessageBox.Show("El empleado ya pertenece a esta area \nThe employee already belongs to this area", "Aviso / Warning" , MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("El numero de empleado es incorrecto");
+                MessageBox.Show("El numero de empleado es incorrecto \nThe employee number is wrong", "Error / Mistake", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -406,16 +438,21 @@ namespace MSM
                     DBHelper.EliminarEmpleadoEnArea(textBoxNumeroEmpleado.Text, Data.TEMPAREA);
                     string mensaje = labelMostrarNombre.Text + " eliminado del area " + Data.TEMPAREA + "\n" +
                                         labelMostrarNombre.Text + " delete from " + Data.TEMPAREA;
-                    MessageBox.Show(mensaje);
+            
+                    MessageBox.Show(mensaje, "Eliminar / Delete", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    
+                    
                 }
                 else
                 {
-                    MessageBox.Show("El empleado no pertenece a esta area");
+                    MessageBox.Show("El empleado no pertenece a esta area \nThe employee does not belong to this area", "Error / Mistake", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                   
                 }
             }
             else
             {
-                MessageBox.Show("El numero de empleado es incorrecto");
+                MessageBox.Show("El numero de empleado es incorrecto \nThe employee number is wrong", "Error / Mistake" , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -439,6 +476,14 @@ namespace MSM
             }
         }
 
+        private void comboBoxArea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            panelexcell.Visible = true;
+
+
+        }
+
+       
     }
 }
 

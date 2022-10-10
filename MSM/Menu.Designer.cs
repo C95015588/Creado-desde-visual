@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.buttonMultiSkills = new System.Windows.Forms.Button();
-            this.buttonAdministrador = new System.Windows.Forms.Button();
             this.buttonKardex = new System.Windows.Forms.Button();
             this.buttonReportePorVencer = new System.Windows.Forms.Button();
             this.TittleBar = new System.Windows.Forms.Panel();
@@ -65,24 +64,6 @@
             this.buttonMultiSkills.Text = "Multi skills";
             this.buttonMultiSkills.UseVisualStyleBackColor = false;
             this.buttonMultiSkills.Click += new System.EventHandler(this.buttonMultiSkills_Click);
-            // 
-            // buttonAdministrador
-            // 
-            this.buttonAdministrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
-            this.buttonAdministrador.FlatAppearance.BorderSize = 0;
-            this.buttonAdministrador.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonAdministrador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdministrador.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdministrador.ForeColor = System.Drawing.Color.Snow;
-            this.buttonAdministrador.Location = new System.Drawing.Point(0, 200);
-            this.buttonAdministrador.Name = "buttonAdministrador";
-            this.buttonAdministrador.Size = new System.Drawing.Size(290, 25);
-            this.buttonAdministrador.TabIndex = 1;
-            this.buttonAdministrador.Text = "Administrador / administrator";
-            this.buttonAdministrador.UseVisualStyleBackColor = false;
-            this.buttonAdministrador.Visible = false;
-            this.buttonAdministrador.Click += new System.EventHandler(this.buttonAdministrador_Click);
             // 
             // buttonKardex
             // 
@@ -218,7 +199,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panel3.Controls.Add(this.buttonAdministrador);
             this.panel3.Controls.Add(this.buttonReportePorVencer);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label9);
@@ -278,7 +258,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonMultiSkills;
-        private System.Windows.Forms.Button buttonAdministrador;
         private System.Windows.Forms.Button buttonKardex;
         private System.Windows.Forms.Button buttonReportePorVencer;
         private System.Windows.Forms.Panel TittleBar;

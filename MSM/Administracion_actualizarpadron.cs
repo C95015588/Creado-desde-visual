@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace MSM
 {
-    public partial class Menu : Form
+    public partial class Administracion_actualizarpadron : Form
     {
-
         private bool mouseIsDown = false;
         private Point firstPoint;
-        public Menu()
+        public Administracion_actualizarpadron()
         {
-
             InitializeComponent();
         }
+
+
         #region TITLE BAR EVENTS
 
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -50,63 +50,14 @@ namespace MSM
 
         #endregion
 
-
-        private void Menu_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-        //PELICANO 
-        private void buttonAdministrador_Click(object sender, EventArgs e) //Boton nos dirige al menu administrador
-        {
-            Administracion PantallaAdministracion = new Administracion();
-            PantallaAdministracion.Show();
-            this.Hide();
-        }
-
-        private void buttonMultiSkills_Click(object sender, EventArgs e) //Boton nos dirige a pantalla MSM
-        {
-            MSM_Area PantallaMsm = new MSM_Area();
-            PantallaMsm.Show();
-            this.Hide();
-        }
-
-        private void buttonKardex_Click(object sender, EventArgs e) //Boton nos dirige a pantalla kardex 
-        {
-            Empleado_Kardex PantallaKardex = new Empleado_Kardex();
-            PantallaKardex.Show();
-            this.Hide();
-        }
-
-        private void buttonReportePorVencer_Click(object sender, EventArgs e) 
-        {
-            Reporte_Por_Vencer PantallaReporte = new Reporte_Por_Vencer();
-            PantallaReporte.Show();
-            this.Hide();
-        }
-
         private void buttonMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-
         }
 
         private void buttonCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Login Pantalla1 = new Login();
-
-            Pantalla1.Show();
-            this.Close();
-            this.Hide();
-
-            Data.ESADMINISTRADOR = false;
-            Data.ESSUPERVISOR = false;
-
-        }
     }
-} 
+}
