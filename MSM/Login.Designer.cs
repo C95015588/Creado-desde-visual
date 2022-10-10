@@ -67,15 +67,17 @@
             this.textBoxUsuario.Location = new System.Drawing.Point(3, 40);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(287, 20);
-            this.textBoxUsuario.TabIndex = 1;
+            this.textBoxUsuario.TabIndex = 0;
+            this.textBoxUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsuario_KeyDown);
             // 
             // textBoxContraseña
             // 
             this.textBoxContraseña.Location = new System.Drawing.Point(4, 97);
             this.textBoxContraseña.Name = "textBoxContraseña";
             this.textBoxContraseña.Size = new System.Drawing.Size(286, 20);
-            this.textBoxContraseña.TabIndex = 2;
+            this.textBoxContraseña.TabIndex = 1;
             this.textBoxContraseña.UseSystemPasswordChar = true;
+            this.textBoxContraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxContraseña_KeyDown);
             // 
             // labelUsuario
             // 
@@ -105,7 +107,7 @@
             this.checkBoxNoTengoCredenciales.Location = new System.Drawing.Point(8, 7);
             this.checkBoxNoTengoCredenciales.Name = "checkBoxNoTengoCredenciales";
             this.checkBoxNoTengoCredenciales.Size = new System.Drawing.Size(160, 25);
-            this.checkBoxNoTengoCredenciales.TabIndex = 8;
+            this.checkBoxNoTengoCredenciales.TabIndex = 3;
             this.checkBoxNoTengoCredenciales.Text = "Modo de lectura";
             this.checkBoxNoTengoCredenciales.UseVisualStyleBackColor = true;
             this.checkBoxNoTengoCredenciales.CheckedChanged += new System.EventHandler(this.checkBoxNoTengoCredenciales_CheckedChanged);
@@ -193,6 +195,7 @@
             this.buttonMinimizar.Name = "buttonMinimizar";
             this.buttonMinimizar.Size = new System.Drawing.Size(34, 30);
             this.buttonMinimizar.TabIndex = 1;
+            this.buttonMinimizar.TabStop = false;
             this.buttonMinimizar.Text = "-";
             this.toolTip.SetToolTip(this.buttonMinimizar, "\"Minimizar / Minimize\"");
             this.buttonMinimizar.UseVisualStyleBackColor = false;
@@ -212,6 +215,7 @@
             this.buttonCerrar.Name = "buttonCerrar";
             this.buttonCerrar.Size = new System.Drawing.Size(34, 30);
             this.buttonCerrar.TabIndex = 0;
+            this.buttonCerrar.TabStop = false;
             this.buttonCerrar.Text = "X";
             this.toolTip.SetToolTip(this.buttonCerrar, "\"Cerrar / Close\"");
             this.buttonCerrar.UseVisualStyleBackColor = false;
@@ -248,7 +252,7 @@
             this.buttonLogin.Location = new System.Drawing.Point(21, 303);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(287, 25);
-            this.buttonLogin.TabIndex = 0;
+            this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "Iniciar / Login";
             this.buttonLogin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -264,7 +268,7 @@
             this.buttonModoLectura.Location = new System.Drawing.Point(22, 386);
             this.buttonModoLectura.Name = "buttonModoLectura";
             this.buttonModoLectura.Size = new System.Drawing.Size(286, 25);
-            this.buttonModoLectura.TabIndex = 23;
+            this.buttonModoLectura.TabIndex = 4;
             this.buttonModoLectura.Text = "Iniciar en modo lectura / Login read only\r\n";
             this.buttonModoLectura.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonModoLectura.UseVisualStyleBackColor = false;

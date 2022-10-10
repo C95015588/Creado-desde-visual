@@ -59,6 +59,7 @@ namespace MSM
 
         private void Buscar_Click(object sender, EventArgs e)
         {
+            panelexcell.Visible = true;
             labelcargando.Visible = true;
             labelcargando.Text = "Cargando / Loading ";
             metroProgressBarCarga.Visible = true;
@@ -216,9 +217,8 @@ namespace MSM
             labelcargando.Visible = true;
             metroProgressBarCarga.Visible = true;    //Mostramos barra de loading y asi el porcentaje que ira aumentando
             metroProgressBarCarga.Value = 10;
-            string mensaje = "La información descargada es solo para fines de consulta y puede variar, para información oficial consultar la publicada en MSM/Training app                                                                        " +
-                "                                                                                                         " +
-                "The downloaded information is only for consultation purposes and may vary, for official information consult the published in MSM/Training app ";
+            string mensaje = "La información descargada es solo para fines de consulta y puede variar, para información oficial consultar la publicada en MSM/Training app" 
+               + "\nThe downloaded information is only for consultation purposes and may vary, for official information consult the published in MSM/Training app ";
 
 
             MessageBox.Show(mensaje, "Advertencia / Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -238,5 +238,21 @@ namespace MSM
             metroProgressBarCarga.Visible = false; 
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+
+            }
+
+        }
     }
-}
+    }
+

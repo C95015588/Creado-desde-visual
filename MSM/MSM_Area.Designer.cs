@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSM_Area));
             this.dataGridViewMultiskill = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBoxArea = new System.Windows.Forms.ComboBox();
             this.TittleBar = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.buttonMinimizar = new System.Windows.Forms.Button();
             this.buttonCerrar = new System.Windows.Forms.Button();
@@ -62,58 +61,60 @@
             this.buttonAgregar = new System.Windows.Forms.Button();
             this.textBoxNumeroEmpleado = new System.Windows.Forms.TextBox();
             this.panelCambioArea = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panelexcell = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMultiskill)).BeginInit();
             this.TittleBar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExcel)).BeginInit();
             this.panelCambioArea.SuspendLayout();
+            this.panelexcell.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewMultiskill
             // 
-
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewMultiskill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
-
-            this.dataGridViewMultiskill.BackgroundColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewMultiskill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridViewMultiskill.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewMultiskill.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.dataGridViewMultiskill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridViewMultiskill.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewMultiskill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewMultiskill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewMultiskill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewMultiskill.DefaultCellStyle = dataGridViewCellStyle23;
-
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewMultiskill.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewMultiskill.EnableHeadersVisualStyles = false;
-            this.dataGridViewMultiskill.Location = new System.Drawing.Point(12, 237);
+            this.dataGridViewMultiskill.Location = new System.Drawing.Point(0, 267);
             this.dataGridViewMultiskill.Name = "dataGridViewMultiskill";
             this.dataGridViewMultiskill.ReadOnly = true;
             this.dataGridViewMultiskill.RowHeadersVisible = false;
-
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewMultiskill.RowsDefaultCellStyle = dataGridViewCellStyle24;
-
-            this.dataGridViewMultiskill.Size = new System.Drawing.Size(1250, 506);
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewMultiskill.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dataGridViewMultiskill.Size = new System.Drawing.Size(1275, 488);
             this.dataGridViewMultiskill.TabIndex = 0;
             this.dataGridViewMultiskill.Visible = false;
             this.dataGridViewMultiskill.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewMultiskill_ColumnHeaderMouseClick);
@@ -142,6 +143,7 @@
             this.comboBoxArea.Name = "comboBoxArea";
             this.comboBoxArea.Size = new System.Drawing.Size(200, 21);
             this.comboBoxArea.TabIndex = 2;
+            this.comboBoxArea.SelectedIndexChanged += new System.EventHandler(this.comboBoxArea_SelectedIndexChanged);
             // 
             // TittleBar
             // 
@@ -158,6 +160,26 @@
             this.TittleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.TittleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.TittleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Location = new System.Drawing.Point(1139, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(34, 30);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "[  ]";
+            this.toolTip1.SetToolTip(this.button3, "\"Maximizar o minimizar / Maximize or minimize \"");
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -261,7 +283,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(170, 16);
             this.label8.TabIndex = 27;
-            this.label8.Text = "multi skill matrix by area";
+            this.label8.Text = "Multi skill matrix by area";
             // 
             // label9
             // 
@@ -298,8 +320,9 @@
             // 
             // pictureBoxExcel
             // 
+            this.pictureBoxExcel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxExcel.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxExcel.Image")));
-            this.pictureBoxExcel.Location = new System.Drawing.Point(1144, 65);
+            this.pictureBoxExcel.Location = new System.Drawing.Point(7, 11);
             this.pictureBoxExcel.Name = "pictureBoxExcel";
             this.pictureBoxExcel.Size = new System.Drawing.Size(47, 36);
             this.pictureBoxExcel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -318,10 +341,13 @@
             // 
             // labelDescargar
             // 
+            this.labelDescargar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDescargar.AutoSize = true;
             this.labelDescargar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDescargar.ForeColor = System.Drawing.Color.White;
-            this.labelDescargar.Location = new System.Drawing.Point(1198, 65);
+            this.labelDescargar.Location = new System.Drawing.Point(61, 2);
             this.labelDescargar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDescargar.Name = "labelDescargar";
             this.labelDescargar.Size = new System.Drawing.Size(62, 16);
@@ -330,10 +356,13 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label5.Location = new System.Drawing.Point(1198, 85);
+            this.label5.Location = new System.Drawing.Point(61, 22);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 16);
@@ -344,7 +373,7 @@
             // 
             this.labelcargando.AutoSize = true;
             this.labelcargando.ForeColor = System.Drawing.Color.Transparent;
-            this.labelcargando.Location = new System.Drawing.Point(600, 46);
+            this.labelcargando.Location = new System.Drawing.Point(621, 46);
             this.labelcargando.Name = "labelcargando";
             this.labelcargando.Size = new System.Drawing.Size(105, 13);
             this.labelcargando.TabIndex = 36;
@@ -369,36 +398,46 @@
             // 
             // buttonBorrar
             // 
-            this.buttonBorrar.Location = new System.Drawing.Point(8, 71);
+            this.buttonBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
+            this.buttonBorrar.FlatAppearance.BorderSize = 0;
+            this.buttonBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBorrar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBorrar.ForeColor = System.Drawing.Color.White;
+            this.buttonBorrar.Location = new System.Drawing.Point(13, 163);
             this.buttonBorrar.Name = "buttonBorrar";
-            this.buttonBorrar.Size = new System.Drawing.Size(63, 23);
+            this.buttonBorrar.Size = new System.Drawing.Size(120, 23);
             this.buttonBorrar.TabIndex = 42;
             this.buttonBorrar.Text = "Borrar / Delete";
-            this.buttonBorrar.UseVisualStyleBackColor = true;
+            this.buttonBorrar.UseVisualStyleBackColor = false;
             this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click);
             // 
             // labelMostrarNombre
             // 
             this.labelMostrarNombre.AutoSize = true;
             this.labelMostrarNombre.ForeColor = System.Drawing.Color.White;
-            this.labelMostrarNombre.Location = new System.Drawing.Point(15, 37);
+            this.labelMostrarNombre.Location = new System.Drawing.Point(13, 135);
             this.labelMostrarNombre.Name = "labelMostrarNombre";
             this.labelMostrarNombre.Size = new System.Drawing.Size(0, 13);
             this.labelMostrarNombre.TabIndex = 41;
             // 
             // buttonAgregar
             // 
-            this.buttonAgregar.Location = new System.Drawing.Point(115, 71);
+            this.buttonAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonAgregar.FlatAppearance.BorderSize = 0;
+            this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregar.ForeColor = System.Drawing.Color.White;
+            this.buttonAgregar.Location = new System.Drawing.Point(177, 163);
             this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(63, 23);
+            this.buttonAgregar.Size = new System.Drawing.Size(120, 23);
             this.buttonAgregar.TabIndex = 40;
             this.buttonAgregar.Text = "Agregar / Add";
-            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.UseVisualStyleBackColor = false;
             this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
             // 
             // textBoxNumeroEmpleado
             // 
-            this.textBoxNumeroEmpleado.Location = new System.Drawing.Point(8, 14);
+            this.textBoxNumeroEmpleado.Location = new System.Drawing.Point(13, 104);
             this.textBoxNumeroEmpleado.Name = "textBoxNumeroEmpleado";
             this.textBoxNumeroEmpleado.Size = new System.Drawing.Size(276, 20);
             this.textBoxNumeroEmpleado.TabIndex = 39;
@@ -406,35 +445,77 @@
             // 
             // panelCambioArea
             // 
+            this.panelCambioArea.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelCambioArea.Controls.Add(this.label11);
+            this.panelCambioArea.Controls.Add(this.label10);
+            this.panelCambioArea.Controls.Add(this.label7);
+            this.panelCambioArea.Controls.Add(this.label6);
             this.panelCambioArea.Controls.Add(this.buttonBorrar);
             this.panelCambioArea.Controls.Add(this.textBoxNumeroEmpleado);
             this.panelCambioArea.Controls.Add(this.labelMostrarNombre);
             this.panelCambioArea.Controls.Add(this.buttonAgregar);
-            this.panelCambioArea.Location = new System.Drawing.Point(854, 121);
+            this.panelCambioArea.Location = new System.Drawing.Point(796, 36);
             this.panelCambioArea.Name = "panelCambioArea";
-            this.panelCambioArea.Size = new System.Drawing.Size(306, 97);
+            this.panelCambioArea.Size = new System.Drawing.Size(306, 197);
             this.panelCambioArea.TabIndex = 38;
+            this.panelCambioArea.Visible = false;
             this.panelCambioArea.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCambioArea_Paint);
             // 
-            // button3
+            // label11
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(1139, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(34, 30);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "[  ]";
-            this.toolTip1.SetToolTip(this.button3, "\"Maximizar / Maximized\"");
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(10, 84);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(88, 13);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "employee number";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(10, 66);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(133, 16);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Numero de empleado: ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(10, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(210, 15);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Add or remove employee in your area";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Snow;
+            this.label6.Location = new System.Drawing.Point(9, 11);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(288, 19);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "Agregar o eliminar empleado en tu area";
+            // 
+            // panelexcell
+            // 
+            this.panelexcell.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelexcell.Controls.Add(this.label5);
+            this.panelexcell.Controls.Add(this.labelDescargar);
+            this.panelexcell.Controls.Add(this.pictureBoxExcel);
+            this.panelexcell.Location = new System.Drawing.Point(1126, 46);
+            this.panelexcell.Name = "panelexcell";
+            this.panelexcell.Size = new System.Drawing.Size(137, 56);
+            this.panelexcell.TabIndex = 39;
+            this.panelexcell.Visible = false;
             // 
             // MSM_Area
             // 
@@ -442,13 +523,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1275, 755);
+            this.Controls.Add(this.panelexcell);
             this.Controls.Add(this.panelCambioArea);
             this.Controls.Add(this.buttonNivel);
             this.Controls.Add(this.metroProgressBarCarga);
             this.Controls.Add(this.labelcargando);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.labelDescargar);
-            this.Controls.Add(this.pictureBoxExcel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
@@ -459,9 +538,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MSM_Area";
-            this.Opacity = 0.85D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MSM_Area";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MSM_Area_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
@@ -472,6 +551,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExcel)).EndInit();
             this.panelCambioArea.ResumeLayout(false);
             this.panelCambioArea.PerformLayout();
+            this.panelexcell.ResumeLayout(false);
+            this.panelexcell.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -506,5 +587,10 @@
         private System.Windows.Forms.TextBox textBoxNumeroEmpleado;
         private System.Windows.Forms.Panel panelCambioArea;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panelexcell;
     }
 }
