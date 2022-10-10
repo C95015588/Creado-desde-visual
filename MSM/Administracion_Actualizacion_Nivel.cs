@@ -58,7 +58,7 @@ namespace MSM
         //        panelFechas.Visible = false;
         //    }
         //}
-
+        // 
         private void button1_Click(object sender, EventArgs e)
         {
             if (labelMostrarNombre.Text != "" && comboBoxNivelCompetencia.Text != "" && comboBoxCertificacionEntrenamiento.Text != "")

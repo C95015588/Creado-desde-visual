@@ -42,8 +42,8 @@
             this.labelFechaInicioText = new System.Windows.Forms.Label();
             this.labelFechaVencimientoText = new System.Windows.Forms.Label();
             this.panelFechas = new System.Windows.Forms.Panel();
-            this.labelFechaInicio = new System.Windows.Forms.Label();
             this.labelFechaVencimiento = new System.Windows.Forms.Label();
+            this.labelFechaInicio = new System.Windows.Forms.Label();
             this.panelFechas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,7 +115,7 @@
             // labelMostrarNombre
             // 
             this.labelMostrarNombre.AutoSize = true;
-            this.labelMostrarNombre.Location = new System.Drawing.Point(164, 159);
+            this.labelMostrarNombre.Location = new System.Drawing.Point(40, 169);
             this.labelMostrarNombre.Name = "labelMostrarNombre";
             this.labelMostrarNombre.Size = new System.Drawing.Size(0, 13);
             this.labelMostrarNombre.TabIndex = 7;
@@ -186,15 +186,6 @@
             this.panelFechas.TabIndex = 15;
             this.panelFechas.Visible = false;
             // 
-            // labelFechaInicio
-            // 
-            this.labelFechaInicio.AutoSize = true;
-            this.labelFechaInicio.Location = new System.Drawing.Point(134, 41);
-            this.labelFechaInicio.Name = "labelFechaInicio";
-            this.labelFechaInicio.Size = new System.Drawing.Size(35, 13);
-            this.labelFechaInicio.TabIndex = 15;
-            this.labelFechaInicio.Text = "--/--/--";
-            // 
             // labelFechaVencimiento
             // 
             this.labelFechaVencimiento.AutoSize = true;
@@ -203,6 +194,15 @@
             this.labelFechaVencimiento.Size = new System.Drawing.Size(35, 13);
             this.labelFechaVencimiento.TabIndex = 16;
             this.labelFechaVencimiento.Text = "--/--/--";
+            // 
+            // labelFechaInicio
+            // 
+            this.labelFechaInicio.AutoSize = true;
+            this.labelFechaInicio.Location = new System.Drawing.Point(134, 41);
+            this.labelFechaInicio.Name = "labelFechaInicio";
+            this.labelFechaInicio.Size = new System.Drawing.Size(35, 13);
+            this.labelFechaInicio.TabIndex = 15;
+            this.labelFechaInicio.Text = "--/--/--";
             // 
             // Administracion_Actualizacion_Nivel
             // 
