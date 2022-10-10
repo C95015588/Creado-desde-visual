@@ -75,11 +75,19 @@
     <Compile Include="Administracion.designer.cs">
       <DependentUpon>Administracion.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="Administracion_Actualizacion_Nivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion_Actualizacion_Nivel.Designer.cs">
+      <DependentUpon>Administracion_Actualizacion_Nivel.cs</DependentUpon>
+
     <Compile Include="Administracion_actualizarpadron.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Administracion_actualizarpadron.Designer.cs">
       <DependentUpon>Administracion_actualizarpadron.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Administracion_actualizar_nivel.cs">
       <SubType>Form</SubType>
@@ -154,8 +162,13 @@
     <EmbeddedResource Include="Administracion.resx">
       <DependentUpon>Administracion.cs</DependentUpon>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="Administracion_Actualizacion_Nivel.resx">
+      <DependentUpon>Administracion_Actualizacion_Nivel.cs</DependentUpon>
+
     <EmbeddedResource Include="Administracion_actualizarpadron.resx">
       <DependentUpon>Administracion_actualizarpadron.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Administracion_actualizar_nivel.resx">
       <DependentUpon>Administracion_actualizar_nivel.cs</DependentUpon>

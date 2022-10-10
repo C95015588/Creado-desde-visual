@@ -68,6 +68,7 @@
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(287, 20);
             this.textBoxUsuario.TabIndex = 0;
+
             this.textBoxUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsuario_KeyDown);
             // 
             // textBoxContraseña
@@ -77,7 +78,9 @@
             this.textBoxContraseña.Size = new System.Drawing.Size(286, 20);
             this.textBoxContraseña.TabIndex = 1;
             this.textBoxContraseña.UseSystemPasswordChar = true;
+
             this.textBoxContraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxContraseña_KeyDown);
+
             // 
             // labelUsuario
             // 
@@ -123,7 +126,7 @@
             this.panelCredenciales.Location = new System.Drawing.Point(18, 170);
             this.panelCredenciales.Name = "panelCredenciales";
             this.panelCredenciales.Size = new System.Drawing.Size(290, 127);
-            this.panelCredenciales.TabIndex = 12;
+            this.panelCredenciales.TabIndex = 0;
             // 
             // label2
             // 
@@ -165,7 +168,7 @@
             this.panel1.Location = new System.Drawing.Point(18, 344);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(290, 36);
-            this.panel1.TabIndex = 16;
+            this.panel1.TabIndex = 0;
             // 
             // TittleBar
             // 
@@ -176,7 +179,7 @@
             this.TittleBar.Location = new System.Drawing.Point(0, 0);
             this.TittleBar.Name = "TittleBar";
             this.TittleBar.Size = new System.Drawing.Size(330, 30);
-            this.TittleBar.TabIndex = 18;
+            this.TittleBar.TabIndex = 0;
             this.TittleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.TittleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.TittleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
@@ -194,7 +197,9 @@
             this.buttonMinimizar.Location = new System.Drawing.Point(262, 0);
             this.buttonMinimizar.Name = "buttonMinimizar";
             this.buttonMinimizar.Size = new System.Drawing.Size(34, 30);
+
             this.buttonMinimizar.TabIndex = 1;
+
             this.buttonMinimizar.TabStop = false;
             this.buttonMinimizar.Text = "-";
             this.toolTip.SetToolTip(this.buttonMinimizar, "\"Minimizar / Minimize\"");
@@ -295,7 +300,7 @@
             this.label10.Location = new System.Drawing.Point(9, 76);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(187, 38);
-            this.label10.TabIndex = 26;
+            this.label10.TabIndex = 0;
             this.label10.Text = "AEROSPACE";
             // 
             // panel2
@@ -305,7 +310,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 491);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(330, 11);
-            this.panel2.TabIndex = 27;
+            this.panel2.TabIndex = 0;
             // 
             // pictureBox1
             // 

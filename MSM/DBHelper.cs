@@ -266,7 +266,7 @@ namespace MSM
             using (SqlConnection cnn = new SqlConnection(sqlDataSource))
             {
                 cnn.Open();
-                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_select_by_codigo", cnn))
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_select_detalles_by_codigo", cnn))
                 {
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.Parameters.AddWithValue("@Codigo", codigo);
@@ -391,7 +391,7 @@ namespace MSM
 
             }
         }
-    public void ObtenerKardex(string NoEmpleado, DataGridView dataGridView)
+        public void ObtenerKardex(string NoEmpleado, DataGridView dataGridView)
         {
             {
                 string sqlDataSource = connectionString;
@@ -594,8 +594,6 @@ namespace MSM
                     {
                         comboBoxCertificacion.Items.Add(dataReader["nombre"].ToString());
                         comboBoxcodigo.Items.Add(dataReader["codigo"].ToString());
-
-
 
                     }
 
@@ -1124,7 +1122,7 @@ namespace MSM
             string mensaje = "";
             if (table.Rows.Count > 0)
             {
-                
+
                 mensaje = "Confirmacion de: ";
 
                 return mensaje;
@@ -1173,6 +1171,198 @@ namespace MSM
             {
                 mensaje = "No se ha podido hacer el cambio";
                 return mensaje;
+            }
+        }
+
+        public string ActualizarNivel(string comboBoxCodigo, string numeroEmpleado, string fechaVencimiento, string nivelCompetencia, string fechaInicio)
+        {
+            DataTable tabla = new DataTable();
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+
+                //Open the connection
+                conexion.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_empleado_udate_or_insert", conexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@NivelCompetencia", nivelCompetencia);
+                    sqlCommand.Parameters.AddWithValue("@NumeroEmpleado", numeroEmpleado);
+                    sqlCommand.Parameters.AddWithValue("@Codigo", comboBoxCodigo);
+                    sqlCommand.Parameters.AddWithValue("@Cuenta", Data.CUENTA);
+                    if (fechaVencimiento != "")
+                    {
+
+                        sqlCommand.Parameters.AddWithValue("@FechaVencimiento", fechaVencimiento);
+                    }
+                    else
+                    {
+                        sqlCommand.Parameters.AddWithValue("@FechaVencimiento", DBNull.Value);
+                    }
+                    if (fechaInicio != "")
+                    {
+
+                        sqlCommand.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+                    }
+                    else
+                    {
+                        sqlCommand.Parameters.AddWithValue("@FechaInicio", DBNull.Value);
+                    }
+
+
+                    dataReader = sqlCommand.ExecuteReader();
+                    tabla.Load(dataReader);
+                    dataReader.Close();
+                    conexion.Close();
+
+                }
+            }
+            string mensaje = "";
+            if (tabla.Rows.Count > 0)
+            {
+
+                mensaje = "Cambio efectuado en el codigo: " + comboBoxCodigo + " para el empleado ";
+                return mensaje;
+            }
+            else
+            {
+                mensaje = "Error no hubo un cambio para el empleado ";
+                return mensaje;
+            }
+        }
+        public int ObtenerCantidadCodigos(string nombre)
+        {
+
+
+
+            string sqlDataSource = connectionString;
+
+
+
+            SqlDataReader dataReader;
+            int cantidad= 0;
+            using (SqlConnection cnn = new SqlConnection(sqlDataSource))
+            {
+                cnn.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_select_cantidad_codigos_by_nombre", cnn))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Nombre", nombre);
+                    dataReader = sqlCommand.ExecuteReader();
+
+
+
+                    while (dataReader.Read())
+                    {
+                        cantidad = (int)dataReader.GetValue(0);
+
+                    }
+                    dataReader.Close();
+                    cnn.Close();
+                }
+                return cantidad;
+            }
+        }
+
+        public void ObtenerCodigosComboBox(ComboBox comboBoxCodigo, string nombre)
+        {
+
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+
+                //Open the connection
+                conexion.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_select_codigo_by_nombre_igual", conexion))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Nombre", nombre);
+                    dataReader = sqlCommand.ExecuteReader();
+
+                    while (dataReader.Read())
+                    {
+                        comboBoxCodigo.Items.Add(dataReader["codigo"].ToString());
+
+                    }
+
+                    dataReader.Close();
+                    conexion.Close();
+                }
+
+            }
+        }
+        public void ObtenerCodigos( ComboBox comboBoxcodigo)
+        {
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+
+
+
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+                conexion.Open();
+
+
+
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_select", conexion))
+                {
+
+
+
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    dataReader = sqlCommand.ExecuteReader();
+
+
+
+                    while (dataReader.Read())
+                    {
+                 
+                        comboBoxcodigo.Items.Add(dataReader["codigo"].ToString());
+
+                    }
+
+
+
+                    dataReader.Close();
+                    conexion.Close();
+                }
+            }
+        }
+        public string ObtenerFrecuenciaByCodigo(string codigo)
+        {
+
+
+
+            string sqlDataSource = connectionString;
+
+            SqlDataReader dataReader;
+            string frecuencia = "";
+            using (SqlConnection cnn = new SqlConnection(sqlDataSource))
+            {
+                cnn.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_select_frecuencia_by_codigo", cnn))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Codigo", codigo);
+                    dataReader = sqlCommand.ExecuteReader();
+
+
+
+                    while (dataReader.Read())
+                    {
+                        frecuencia = dataReader.GetValue(0).ToString();
+
+                    }
+                    dataReader.Close();
+                    cnn.Close();
+                }
+                return frecuencia;
             }
         }
     }

@@ -174,12 +174,14 @@ namespace MSM
             }
         }
 
+
         private void textBoxContraseña_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 buttonLogin_Click(this, new EventArgs());
             }
+
         }
     }
 }
