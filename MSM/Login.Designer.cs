@@ -68,7 +68,7 @@
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(287, 20);
             this.textBoxUsuario.TabIndex = 0;
-            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
+
             this.textBoxUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsuario_KeyDown);
             // 
             // textBoxContraseña
@@ -78,7 +78,9 @@
             this.textBoxContraseña.Size = new System.Drawing.Size(286, 20);
             this.textBoxContraseña.TabIndex = 1;
             this.textBoxContraseña.UseSystemPasswordChar = true;
-            this.textBoxContraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsuario_KeyDown);
+
+            this.textBoxContraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxContraseña_KeyDown);
+
             // 
             // labelUsuario
             // 
@@ -195,7 +197,9 @@
             this.buttonMinimizar.Location = new System.Drawing.Point(262, 0);
             this.buttonMinimizar.Name = "buttonMinimizar";
             this.buttonMinimizar.Size = new System.Drawing.Size(34, 30);
-            this.buttonMinimizar.TabIndex = 0;
+
+            this.buttonMinimizar.TabIndex = 1;
+
             this.buttonMinimizar.TabStop = false;
             this.buttonMinimizar.Text = "-";
             this.toolTip.SetToolTip(this.buttonMinimizar, "\"Minimizar / Minimize\"");

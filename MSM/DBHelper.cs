@@ -80,7 +80,7 @@ namespace MSM
                 else
                 {
 
-                    Data.ESSUPERVISOR = false;
+                    Data.ESADMINISTRADOR = false;
                 }
             }
         }
@@ -165,7 +165,7 @@ namespace MSM
 
             {
 
-                Data.NOMBREEMPLEADO = "No de empleado incorrecto";
+                Data.NOMBREEMPLEADO = "Número de empleado incorrecto / Wrong employee number";
             }
         }
         public void ObtenerAreasEnComboBox(ComboBox comboBoxArea)
