@@ -66,92 +66,93 @@ namespace MSM
 
             dataGridViewReporte.Columns.Clear();
             DBHelper.MostrarReportePorVencer(dataGridViewReporte, comboBoxArea.Text);
-            DateTime hoy = DateTime.Today;
-            int mesActual = hoy.Month;
-            int añoActual = hoy.Year;
-            DateTime primeroDeMesActual = new DateTime( añoActual,mesActual, 01);
-            DateTime mesUno = primeroDeMesActual;
-            mesUno = mesUno.AddMonths(1).AddDays(-1);
-            DateTime mesDos = primeroDeMesActual.AddMonths(2).AddDays(-1);
-            DateTime mesTres = primeroDeMesActual.AddMonths(3).AddDays(-1);
-            DateTime mesCuatro = primeroDeMesActual.AddMonths(4).AddDays(-1);
-            string primerMesPalabra = mesUno.ToString("MMM-dd-yyyy");
-            string segundoMesPalabra = mesDos.ToString("MMM-dd-yyyy");
-            string tercerMesPalabra = mesTres.ToString("MMM-dd-yyyy");
-            string cuartoMesPalabra = mesCuatro.ToString("MMM-dd-yyyy");
-            metroProgressBarCarga.Value = 50;
+            //DateTime hoy = DateTime.Today;
+            //int mesActual = hoy.Month;
+            //int añoActual = hoy.Year;
+            //DateTime primeroDeMesActual = new DateTime( añoActual,mesActual, 01);
+            //DateTime mesUno = primeroDeMesActual;
+            //mesUno = mesUno.AddMonths(1).AddDays(-1);
+            //DateTime mesDos = primeroDeMesActual.AddMonths(2).AddDays(-1);
+            //DateTime mesTres = primeroDeMesActual.AddMonths(3).AddDays(-1);
+            //DateTime mesCuatro = primeroDeMesActual.AddMonths(4).AddDays(-1);
+            //string primerMesPalabra = mesUno.ToString("MMM-dd-yyyy");
+            //string segundoMesPalabra = mesDos.ToString("MMM-dd-yyyy");
+            //string tercerMesPalabra = mesTres.ToString("MMM-dd-yyyy");
+            //string cuartoMesPalabra = mesCuatro.ToString("MMM-dd-yyyy");
+            //metroProgressBarCarga.Value = 50;
 
-            dataGridViewReporte.Columns.Add(primerMesPalabra, primerMesPalabra);
-            dataGridViewReporte.Columns.Add(segundoMesPalabra,segundoMesPalabra);
-            dataGridViewReporte.Columns.Add(tercerMesPalabra, tercerMesPalabra);
-            dataGridViewReporte.Columns.Add(cuartoMesPalabra, cuartoMesPalabra);
+            //dataGridViewReporte.Columns.Add(primerMesPalabra, primerMesPalabra);
+            //dataGridViewReporte.Columns.Add(segundoMesPalabra,segundoMesPalabra);
+            //dataGridViewReporte.Columns.Add(tercerMesPalabra, tercerMesPalabra);
+            //dataGridViewReporte.Columns.Add(cuartoMesPalabra, cuartoMesPalabra);
+            //string nombreCertificacionEntrenamiento;
+            //string fechaAVencer;
+            //string duracion;
+            //string mesProyectado;
+            //DateTime fechaVigencia;
+            //DateTime fechaProyectada;
+            //DateTime fechaVigenciaAnticipada;
 
-            metroProgressBarCarga.Value = 70;
-            for (int i = 5; dataGridViewReporte.ColumnCount > i; i++)
-            {
-                for (int x = 0; dataGridViewReporte.RowCount > x; x++)
-                {
+            //metroProgressBarCarga.Value = 70;
+            //    int duracionDias;
+            //for (int x = 0; dataGridViewReporte.RowCount-1 > x;   x++)
+            //    {
+            //                nombreCertificacionEntrenamiento = dataGridViewReporte.Rows[x].Cells[3].Value.ToString();
+            //                fechaAVencer = dataGridViewReporte.Rows[x].Cells[4].Value.ToString();
+            //                duracion = DBHelper.ObtenerDuracionCertificacionEntrenamiento(nombreCertificacionEntrenamiento);
 
-                    try
-                    {
+            //   // if (dataGridViewReporte.Rows[x].Cells[4].Value != null)
+            //    //{
+            //        if (duracion != "")
+            //        {
+            //            duracionDias = int.Parse(duracion);
 
-                        if (dataGridViewReporte.Rows[x].Cells[4].Value != null)
-                        {
+            //        }
+            //        else
+            //        {
+            //            duracionDias = 0;
+            //        }
+            //    //}
+            //    for (int i = 5; dataGridViewReporte.ColumnCount > i; i++)
+            //        { 
+            //        try
+            //        {
 
-                            string fechaAVencer = dataGridViewReporte.Rows[x].Cells[4].Value.ToString();
-                            string mesProyectado = dataGridViewReporte.Columns[i].HeaderText;
-                            string nombreCertificacionEntrenamiento = dataGridViewReporte.Rows[x].Cells[3].Value.ToString();
-                            string duracion = DBHelper.ObtenerDuracionCertificacionEntrenamiento(nombreCertificacionEntrenamiento);
-                            int duracionDias = int.Parse(duracion);
+            //                mesProyectado = dataGridViewReporte.Columns[i].HeaderText;
+            //                fechaVigencia = DateTime.Parse(fechaAVencer);
+            //                fechaProyectada = DateTime.Parse(mesProyectado);
+            //                fechaVigenciaAnticipada = fechaVigencia.AddDays(-duracionDias);
+            //                if (fechaVigencia <= fechaProyectada)
+            //                {
+            //                    dataGridViewReporte.Rows[x].Cells[i].Value = "Vencido";
+            //                    dataGridViewReporte.Rows[x].Cells[i].Style.BackColor = Color.Red;
+            //                }
+            //                else
+            //                {
+            //                    dataGridViewReporte.Rows[x].Cells[i].Value = "Vigente";
+            //                }
+            //                if (fechaVigenciaAnticipada <= fechaProyectada)
+            //                {
+            //                dataGridViewReporte.Rows[x].Cells[i].Style.BackColor = Color.Red;
+            //                }
 
-                            var fechaVigencia = DateTime.Parse(fechaAVencer);
-                            var fechaProyectada = DateTime.Parse(mesProyectado);
-                            var fechaVigenciaAnticipada = fechaVigencia.AddDays(-duracionDias);
-                            if (fechaVigencia <= fechaProyectada)
-                            {
-                                dataGridViewReporte.Rows[x].Cells[i].Value = "Vencido";
-                                dataGridViewReporte.Rows[x].Cells[i].Style.BackColor = Color.Red;
-                            }
-                            else
-                            {
-                                dataGridViewReporte.Rows[x].Cells[i].Value = "Vigente";
-                            }
-                            if (fechaVigenciaAnticipada <= fechaProyectada)
-                            {
-                            dataGridViewReporte.Rows[x].Cells[i].Style.BackColor = Color.Red;
-                            }
-                            metroProgressBarCarga.Value = 90;
+                            
+            //        }
+            //        catch
+            //        {
 
-                            //var fechaVigencia = DateTime.Parse(fechaAVencer);
-                            //var fechaProyectada = DateTime.Parse(mesProyectado);
-                            //fechaProyectada = fechaProyectada.AddDays(-duracionDias);
-                            //if (fechaVigencia <= fechaProyectada)
-                            //{
-                            //    dataGridViewReporte.Rows[x].Cells[i].Style.BackColor = Color.Red;
-                            //    dataGridViewReporte.Rows[x].Cells[i].Value = "Vencido";
+            //        }
+            //    }
 
+            //}
+            //metroProgressBarCarga.Value = 90;
 
-                            //}
-                            //else
-                            //{
-                            //    dataGridViewReporte.Rows[x].Cells[i].Value = "Vigente";
+            //dataGridViewReporte.Columns[1].Frozen = true;
 
-                            //}
-                        }
-                    }
-                    catch
-                    {
+            //metroProgressBarCarga.Value = 100;
+            //labelcargando.Text = "Carga finalizada / Upload finished";
 
-                    }
-                }
-                //dataGridViewMultiskill.Columns[i].DefaultCellStyle = norStyle;  //Metodo para que aparezcan las meatballs
-            }
-            dataGridViewReporte.Columns[1].Frozen = true;
-
-            metroProgressBarCarga.Value = 100;
-            labelcargando.Text = "Carga finalizada / Upload finished";
-
-            metroProgressBarCarga.Visible = false; 
+            //metroProgressBarCarga.Visible = false; 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -166,7 +167,7 @@ namespace MSM
         private void buttonMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
+        }  
 
         private void buttonCerrar_Click(object sender, EventArgs e)
         {

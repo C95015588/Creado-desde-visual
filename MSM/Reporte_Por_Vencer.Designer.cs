@@ -363,6 +363,7 @@
             this.Opacity = 0.85D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "|";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Reporte_Por_Vencer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReporte)).EndInit();
             this.TittleBar.ResumeLayout(false);

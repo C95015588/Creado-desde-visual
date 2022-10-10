@@ -67,15 +67,18 @@
             this.textBoxUsuario.Location = new System.Drawing.Point(3, 40);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(287, 20);
-            this.textBoxUsuario.TabIndex = 1;
+            this.textBoxUsuario.TabIndex = 0;
+            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
+            this.textBoxUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsuario_KeyDown);
             // 
             // textBoxContraseña
             // 
             this.textBoxContraseña.Location = new System.Drawing.Point(4, 97);
             this.textBoxContraseña.Name = "textBoxContraseña";
             this.textBoxContraseña.Size = new System.Drawing.Size(286, 20);
-            this.textBoxContraseña.TabIndex = 2;
+            this.textBoxContraseña.TabIndex = 1;
             this.textBoxContraseña.UseSystemPasswordChar = true;
+            this.textBoxContraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUsuario_KeyDown);
             // 
             // labelUsuario
             // 
@@ -105,7 +108,7 @@
             this.checkBoxNoTengoCredenciales.Location = new System.Drawing.Point(8, 7);
             this.checkBoxNoTengoCredenciales.Name = "checkBoxNoTengoCredenciales";
             this.checkBoxNoTengoCredenciales.Size = new System.Drawing.Size(160, 25);
-            this.checkBoxNoTengoCredenciales.TabIndex = 8;
+            this.checkBoxNoTengoCredenciales.TabIndex = 3;
             this.checkBoxNoTengoCredenciales.Text = "Modo de lectura";
             this.checkBoxNoTengoCredenciales.UseVisualStyleBackColor = true;
             this.checkBoxNoTengoCredenciales.CheckedChanged += new System.EventHandler(this.checkBoxNoTengoCredenciales_CheckedChanged);
@@ -121,7 +124,7 @@
             this.panelCredenciales.Location = new System.Drawing.Point(18, 170);
             this.panelCredenciales.Name = "panelCredenciales";
             this.panelCredenciales.Size = new System.Drawing.Size(290, 127);
-            this.panelCredenciales.TabIndex = 12;
+            this.panelCredenciales.TabIndex = 0;
             // 
             // label2
             // 
@@ -163,7 +166,7 @@
             this.panel1.Location = new System.Drawing.Point(18, 344);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(290, 36);
-            this.panel1.TabIndex = 16;
+            this.panel1.TabIndex = 0;
             // 
             // TittleBar
             // 
@@ -174,7 +177,7 @@
             this.TittleBar.Location = new System.Drawing.Point(0, 0);
             this.TittleBar.Name = "TittleBar";
             this.TittleBar.Size = new System.Drawing.Size(330, 30);
-            this.TittleBar.TabIndex = 18;
+            this.TittleBar.TabIndex = 0;
             this.TittleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
             this.TittleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseMove);
             this.TittleBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseUp);
@@ -192,7 +195,8 @@
             this.buttonMinimizar.Location = new System.Drawing.Point(262, 0);
             this.buttonMinimizar.Name = "buttonMinimizar";
             this.buttonMinimizar.Size = new System.Drawing.Size(34, 30);
-            this.buttonMinimizar.TabIndex = 1;
+            this.buttonMinimizar.TabIndex = 0;
+            this.buttonMinimizar.TabStop = false;
             this.buttonMinimizar.Text = "-";
             this.toolTip.SetToolTip(this.buttonMinimizar, "\"Minimizar / Minimize\"");
             this.buttonMinimizar.UseVisualStyleBackColor = false;
@@ -212,6 +216,7 @@
             this.buttonCerrar.Name = "buttonCerrar";
             this.buttonCerrar.Size = new System.Drawing.Size(34, 30);
             this.buttonCerrar.TabIndex = 0;
+            this.buttonCerrar.TabStop = false;
             this.buttonCerrar.Text = "X";
             this.toolTip.SetToolTip(this.buttonCerrar, "\"Cerrar / Close\"");
             this.buttonCerrar.UseVisualStyleBackColor = false;
@@ -248,7 +253,7 @@
             this.buttonLogin.Location = new System.Drawing.Point(21, 303);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(287, 25);
-            this.buttonLogin.TabIndex = 0;
+            this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "Iniciar / Login";
             this.buttonLogin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -264,7 +269,7 @@
             this.buttonModoLectura.Location = new System.Drawing.Point(22, 386);
             this.buttonModoLectura.Name = "buttonModoLectura";
             this.buttonModoLectura.Size = new System.Drawing.Size(286, 25);
-            this.buttonModoLectura.TabIndex = 23;
+            this.buttonModoLectura.TabIndex = 4;
             this.buttonModoLectura.Text = "Iniciar en modo lectura / Login read only\r\n";
             this.buttonModoLectura.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonModoLectura.UseVisualStyleBackColor = false;
@@ -291,7 +296,7 @@
             this.label10.Location = new System.Drawing.Point(9, 76);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(187, 38);
-            this.label10.TabIndex = 26;
+            this.label10.TabIndex = 0;
             this.label10.Text = "AEROSPACE";
             // 
             // panel2
@@ -301,7 +306,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 491);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(330, 11);
-            this.panel2.TabIndex = 27;
+            this.panel2.TabIndex = 0;
             // 
             // pictureBox1
             // 
