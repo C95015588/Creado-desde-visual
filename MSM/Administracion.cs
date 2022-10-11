@@ -72,7 +72,11 @@ namespace MSM
 
         private void buttonFechasDeCertificacionesYEntrenaminetos_Click(object sender, EventArgs e)
         {
-        }
+            
+                Administracion_Actualizacion_Nivel abrirPantalla = new Administracion_Actualizacion_Nivel();
+                abrirPantalla.Show();
+                this.Hide();
+            }
 
         private void buttonReportePorVencer_Click(object sender, EventArgs e)
         {
