@@ -43,6 +43,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonAdmi = new System.Windows.Forms.Button();
             this.TittleBar.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -199,6 +200,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel3.Controls.Add(this.buttonAdmi);
             this.panel3.Controls.Add(this.buttonReportePorVencer);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label9);
@@ -208,6 +210,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(290, 334);
             this.panel3.TabIndex = 24;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // pictureBox1
             // 
@@ -228,6 +231,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(330, 11);
             this.panel2.TabIndex = 28;
+            // 
+            // buttonAdmi
+            // 
+            this.buttonAdmi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(17)))), ((int)(((byte)(38)))));
+            this.buttonAdmi.FlatAppearance.BorderSize = 0;
+            this.buttonAdmi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonAdmi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonAdmi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdmi.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdmi.ForeColor = System.Drawing.Color.Snow;
+            this.buttonAdmi.Location = new System.Drawing.Point(0, 200);
+            this.buttonAdmi.Name = "buttonAdmi";
+            this.buttonAdmi.Size = new System.Drawing.Size(290, 25);
+            this.buttonAdmi.TabIndex = 24;
+            this.buttonAdmi.Text = "Administrador / Administrator ";
+            this.buttonAdmi.UseVisualStyleBackColor = false;
+            this.buttonAdmi.Visible = false;
             // 
             // Menu
             // 
@@ -270,5 +290,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button buttonAdmi;
     }
 }

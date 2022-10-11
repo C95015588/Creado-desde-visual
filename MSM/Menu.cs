@@ -53,7 +53,15 @@ namespace MSM
 
         private void Menu_Load(object sender, EventArgs e)
         {
-           
+            if(Data.ESADMINISTRADOR == true)
+            {
+                buttonAdmi.Visible = true;
+            }else
+            if (Data.ESADMINISTRADOR == false)
+            {
+                buttonAdmi.Visible = false;
+            }
+            
         }
 
         //PELICANO 
@@ -106,6 +114,11 @@ namespace MSM
 
             Data.ESADMINISTRADOR = false;
             Data.ESSUPERVISOR = false;
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
