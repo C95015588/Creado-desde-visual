@@ -312,7 +312,7 @@
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.comboBoxNombre1);
             this.panel3.Controls.Add(this.comboBoxCodigo1);
-            this.panel3.Location = new System.Drawing.Point(611, 129);
+            this.panel3.Location = new System.Drawing.Point(537, 112);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(493, 186);
             this.panel3.TabIndex = 9;
