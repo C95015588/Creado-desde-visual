@@ -87,6 +87,12 @@
     <Compile Include="Administracion_actualizarpadron.Designer.cs">
       <DependentUpon>Administracion_actualizarpadron.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administracion_Actualizar_Vencidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administracion_Actualizar_Vencidos.Designer.cs">
+      <DependentUpon>Administracion_Actualizar_Vencidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administracion_Administrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administracion_actualizarpadron.resx">
       <DependentUpon>Administracion_actualizarpadron.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administracion_Actualizar_Vencidos.resx">
+      <DependentUpon>Administracion_Actualizar_Vencidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administracion_Administrador.resx">
       <DependentUpon>Administracion_Administrador.cs</DependentUpon>

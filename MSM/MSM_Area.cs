@@ -17,6 +17,7 @@ namespace MSM
 
         private bool mouseIsDown = false;
         private Point firstPoint;
+        string anteriorCertificacionEntrenamiento;
         public MSM_Area()
         {
             InitializeComponent();
@@ -182,6 +183,7 @@ namespace MSM
 
         private void MSM_Area_Load(object sender, EventArgs e)
         {
+
             DBHelper.ObtenerAreasEnComboBox(comboBoxArea);
 
         }
@@ -226,8 +228,8 @@ namespace MSM
             labelcargando.Text = "Carga finalizada / Upload finished";
             Data.TEMPAREA = comboBoxArea.Text;
             metroProgressBarCarga.Visible = false;
-            dataGridViewMultiskill.Columns[1].Frozen = true; 
-
+            dataGridViewMultiskill.Columns[1].Frozen = true;
+            comboBoxCertificacionEntrenamiento.Text = "";
 
         }
 
@@ -479,11 +481,117 @@ namespace MSM
         private void comboBoxArea_SelectedIndexChanged(object sender, EventArgs e)
         {
             panelexcell.Visible = true;
+            comboBoxCertificacionEntrenamiento.Items.Clear();
 
+            DBHelper.ObtenerCertificacionEntrenamientoByArea(comboBoxArea.Text, comboBoxCertificacionEntrenamiento);
+
+            comboBoxNA.Items.Clear();
+
+            DBHelper.ObtenerCertificacionEntrenamientoByArea(comboBoxArea.Text, comboBoxNA);
 
         }
 
-       
+        private void comboBoxCertificacionEntrenamiento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if(comboBoxCertificacionEntrenamiento.Text != anteriorCertificacionEntrenamiento && comboBoxCertificacionEntrenamiento.Text != "") 
+            { 
+            DBHelper.MostrarTablaMultiSkillCertificacionEntrenamiento(dataGridViewMultiskill, comboBoxArea.Text, comboBoxCertificacionEntrenamiento.Text);
+            dataGridViewMultiskill.Visible = true;
+            dataGridViewMultiskill.AutoResizeColumns();
+            dataGridViewMultiskill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            string certificacionEntrenamiento, fechaNivelCompetencia, fechaVencimiento;
+            string[] informacionCertificacion, certificacionEntrenamientoNombre;
+
+
+            char separador = '|';
+            char delimitador = '[';
+
+
+
+            string duracion;
+            double duracionDias;
+
+
+            certificacionEntrenamiento = dataGridViewMultiskill.Columns[2].HeaderText;
+            certificacionEntrenamientoNombre = certificacionEntrenamiento.Split(separador);
+            duracion = DBHelper.ObtenerDuracionCertificacionEntrenamiento(certificacionEntrenamientoNombre[0]);
+
+                if (duracion != "")
+                {
+                    duracionDias = double.Parse(duracion);
+                }
+                else
+                {
+                    duracionDias = 0;
+                }
+                for (int x = 0; dataGridViewMultiskill.RowCount > x; x++)
+                {
+
+                    //if (dataGridViewMultiskill.Rows[x].Cells[i].Value != null)
+                    //{
+                    //    if (dataGridViewMultiskill.Rows[x].Cells[i].Value.ToString() == String.Empty)
+                    //        dataGridViewMultiskill.Rows[x].Cells[i].Value = 0;
+                    //}
+                    //try
+                    //{
+                    // char delimitador = '[';
+
+                    if (dataGridViewMultiskill.Rows[x].Cells[2].Value != null)
+                    {
+
+                        fechaNivelCompetencia = dataGridViewMultiskill.Rows[x].Cells[2].Value.ToString();
+                        informacionCertificacion = fechaNivelCompetencia.Split(delimitador);
+                        try
+                        {
+                            fechaVencimiento = informacionCertificacion[1];
+                        }
+                        catch
+                        {
+                            continue;
+                        }
+                        if (informacionCertificacion[1] != "")
+                        {
+
+                            fechaVencimiento = fechaVencimiento.Remove(fechaVencimiento.Length - 1);
+                            var fechaVigencia = DateTime.Parse(fechaVencimiento);
+                            fechaVigencia = fechaVigencia.AddDays(-duracionDias);
+                            if (fechaVigencia <= DateTime.Today)
+                            {
+
+                                dataGridViewMultiskill.Rows[x].Cells[2].Style.BackColor = Color.Red;
+
+
+                            }
+                        }
+                    }
+                }
+
+            }
+            anteriorCertificacionEntrenamiento = comboBoxCertificacionEntrenamiento.Text;
+        }
+
+
+        private void buttonBuscarCertificacionEntrenamiento_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void buttonBorrarFiltro_Click(object sender, EventArgs e)
+        {
+            comboBoxCertificacionEntrenamiento.Text = "";
+
+        }
+
+        private void comboBoxNA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
