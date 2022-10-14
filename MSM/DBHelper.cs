@@ -1365,5 +1365,136 @@ namespace MSM
                 return frecuencia;
             }
         }
+
+        public void ObtenerCertificacionEntrenamientoByArea(string area, ComboBox comboBoxCertificacion)
+        {
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+
+
+
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+                conexion.Open();
+
+
+
+
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_select_certificacion_entrenamiento_by_area", conexion))
+                {
+
+
+
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Area", area);
+                    dataReader = sqlCommand.ExecuteReader();
+
+
+
+                    while (dataReader.Read())
+                    {
+                        comboBoxCertificacion.Items.Add(dataReader["nombre"].ToString());
+                        
+                    }
+
+
+
+                    dataReader.Close();
+                    conexion.Close();
+                }
+            }
+        }
+
+        public void MostrarTablaMultiSkillCertificacionEntrenamiento(DataGridView dataGridViewMultiskill, string area, string certificacionEntrenamiento)
+        {
+
+            string sqlDataSource = connectionString;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+            using (SqlConnection cnn = new SqlConnection(sqlDataSource))
+            {
+                cnn.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("p_certificacion_entrenamiento_select_codigo_by_certificacion_entrenamiento_and_area", cnn))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    adapter.SelectCommand = sqlCommand;
+                    sqlCommand.Parameters.AddWithValue("@Area", area);
+                    sqlCommand.Parameters.AddWithValue("@CertificacionesEntrenamiento", certificacionEntrenamiento);
+                    adapter.Fill(table);
+                    dataGridViewMultiskill.DataSource = table;
+                    cnn.Close();
+                }
+
+            }
+        }
+
+        //public string ActualizarVencidos()
+        //{
+
+        //    string sqlDataSource = connectionString;
+        //    SqlDataReader dataReader;
+        //    DataTable tabla = new DataTable();
+        //    using (SqlConnection cnn = new SqlConnection(sqlDataSource))
+        //    {
+        //        cnn.Open();
+        //        using (SqlCommand sqlCommand = new SqlCommand("", cnn))
+        //        {
+        //            sqlCommand.CommandType = CommandType.StoredProcedure;
+        //            dataReader.SelectCommand = sqlCommand;
+        //            tabla.Load(dataReader);
+        //            cnn.Close();
+        //        }
+
+        //    }
+        //    string mensaje = "";
+        //    if (tabla.Rows.Count > 0)
+        //    {
+
+        //        mensaje = "Cambio efectuado: " + tabla.Rows[0].Field<decimal>("id");
+
+        //        return mensaje;
+        //    }
+        //    else
+        //    {
+        //        mensaje = "Error no hubo un cambio";
+        //        return mensaje;
+        //    }
+        //}
+
+        public string ActualizarVencidos()
+        {
+            DataTable tabla = new DataTable();
+            string sqlDataSource = connectionString;
+            SqlDataReader dataReader;
+            using (SqlConnection conexion = new SqlConnection(sqlDataSource))
+            {
+
+                //Open the connection
+                conexion.Open();
+
+                using (SqlCommand sqlCommand = new SqlCommand("", conexion))
+                {
+                    dataReader = sqlCommand.ExecuteReader();
+                    tabla.Load(dataReader);
+                    dataReader.Close();
+                    conexion.Close();
+                }
+
+            }
+            string mensaje = "";
+            if (tabla.Rows.Count > 0)
+            {
+
+                mensaje = "Cambio efectuado: " + tabla.Rows[0].Field<decimal>("id") + " afectados";
+
+                return mensaje;
+            }
+            else
+            {
+                mensaje = "Error no hubo un cambio";
+                return mensaje;
+            }
+
+        }
     }
 }
